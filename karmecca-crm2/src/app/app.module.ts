@@ -7,13 +7,15 @@ import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
 import { HomeComponent } from './home/home.component';
 import { RouterModule } from '@angular/router';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     AdminComponent,
-    HomeComponent
+    HomeComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -28,6 +30,11 @@ import { RouterModule } from '@angular/router';
         component: AdminComponent
       },
       {
+        path: 'register',
+        component: RegisterComponent
+      },
+      {
+        //ANY NEW COMPONENTS NEED TO BE PLACED BEFORE THIS ONE
         path: '',
         component: HomeComponent
       }
