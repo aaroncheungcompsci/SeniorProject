@@ -7,13 +7,19 @@ import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
 import { HomeComponent } from './home/home.component';
 import { RouterModule } from '@angular/router';
+import { RegisterComponent } from './register/register.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+/** TODO: remove when this is no longer needed */
+import 'hammerjs';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     AdminComponent,
-    HomeComponent
+    HomeComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -28,10 +34,16 @@ import { RouterModule } from '@angular/router';
         component: AdminComponent
       },
       {
+        path: 'register',
+        component: RegisterComponent
+      },
+      {
+        //ANY NEW COMPONENTS NEED TO BE PLACED BEFORE THIS ONE
         path: '',
         component: HomeComponent
       }
-    ])
+    ]),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
