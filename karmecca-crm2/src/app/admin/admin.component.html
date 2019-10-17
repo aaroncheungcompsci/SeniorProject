@@ -1,13 +1,30 @@
 <!DOCTYPE HTML>
-<html lang = "en">
+<html >
   <head>
-    <title>formDemo.html</title>
+    <style>
+        th, td{
+            text-align: left;
+            padding:8px;
+            
+        }
+        th {
+            background-color:black;
+            color:white;
+        }
+        tbody tr:nth-child(odd){
+            background:lightgray;
+        }
+        
+    
     <meta charset = "UTF-8" />
+    <script src="sort-table.js"></script>
+    <link rel="stylesheet" href="sort-table.css">
+    </style>
   </head>
   <body>
 
        
-          <h1>Car Applications</h1>
+          <h1>Applications</h1>
           <p>
              <label>Filter By </label>
              <select id = "myList">
@@ -19,15 +36,37 @@
           </p>
        
 
-    <table> 
-        <tr> 
-            <th>Name</th>
-            <th>Status</th>
-        </tr> 
-        <tr>
-             <td>Bob</td>
-              <td>Complete</td>
-        </tr> 
+          <table id="app" class="table" data-sorting="true" cellspacing="0" width="100%" border="1">
+             <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th data-breakpoints="xs sm" data-type= "date" data-format-string="MMMM Do YYYY">Date</th>
+                    <th>Status</th>
+                 </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                   <td>Michael Phelps</td> 
+                   <td>Car</td>
+                   <td>2019</td>
+                   <td>Completed</td>
+                   </tr>
+
+                   <tr>
+                   <td>Jason Martin</td> 
+                   <td>Volunteer</td>
+                   <td>2018</td>
+                   <td>Completed</td>
+                   </tr>
+
+                   <tr>
+                   <td>Sam Robinson</td> 
+                   <td>Vendor</td>
+                   <td>2018</td>
+                   <td>Completed</td>
+                   </tr>
+                  </tbody>
     </table>
 
   </body>
