@@ -9,20 +9,36 @@ import { HomeComponent } from './home/home.component';
 import { RouterModule } from '@angular/router';
 import { RegisterComponent } from './register/register.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTableModule } from '@angular/material';
+import {UserTableComponent} from './components/user-table/user-table.component';
+import {HttpClientModule} from '@angular/common/http';
+import {UserService} from './services/user.service';
 
 /** TODO: remove when this is no longer needed */
 import 'hammerjs';
+
+
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { ApplicationtableComponent } from './applicationtable/applicationtable.component';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     AdminComponent,
+    UserTableComponent,
     HomeComponent,
-    RegisterComponent
+    RegisterComponent,
+    ApplicationtableComponent,
+
   ],
   imports: [
     BrowserModule,
+
+
     AppRoutingModule,
     RouterModule.forRoot([
       {
@@ -38,12 +54,19 @@ import 'hammerjs';
         component: RegisterComponent
       },
       {
+        path: 'applicationtable',
+        component: ApplicationtableComponent
+      },
+      {
         //ANY NEW COMPONENTS NEED TO BE PLACED BEFORE THIS ONE
         path: '',
         component: HomeComponent
       }
     ]),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]
