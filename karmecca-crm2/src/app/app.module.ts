@@ -15,7 +15,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {UserService} from './services/user.service';
 import { PostCreateComponent } from './posts/post-create/post-create.component';
 import {FormsModule} from '@angular/forms';
-import {MatInputModule, MatCardModule, MatButtonModule, MatToolbarModule} from '@angular/material';
+import {MatInputModule, MatCardModule, MatButtonModule, MatToolbarModule, MatCard} from '@angular/material';
 /** TODO: remove when this is no longer needed */
 import 'hammerjs';
 
@@ -49,6 +49,7 @@ import { RegisterconfirmComponent } from './registerconfirm/registerconfirm.comp
     MatButtonModule,
     MatCardModule,
     MatToolbarModule,
+    MatCard,
     AppRoutingModule,
     RouterModule.forRoot([
       {

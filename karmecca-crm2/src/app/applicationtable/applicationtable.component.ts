@@ -3,6 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
 import { ApplicationtableDataSource, ApplicationtableItem } from './applicationtable-datasource';
+import { MatCard } from '@angular/material';
 
 @Component({
   selector: 'app-applicationtable',
@@ -15,6 +16,8 @@ export class ApplicationtableComponent implements AfterViewInit, OnInit {
   @ViewChild(MatTable, {static: false}) table: MatTable<ApplicationtableItem>;
   dataSource: ApplicationtableDataSource;
 
+  public details = '';
+
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
   displayedColumns = ['id', 'name', 'category', 'date', 'actions'];
 
@@ -22,6 +25,11 @@ export class ApplicationtableComponent implements AfterViewInit, OnInit {
     this.dataSource = new ApplicationtableDataSource();
   }
 
+  onClick(){
+    console.log('more app details');
+
+    this.details = 'More user application details!';
+  }
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
