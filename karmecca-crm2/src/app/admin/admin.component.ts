@@ -12,4 +12,8 @@ export class AdminComponent implements OnInit {
   ngOnInit() {
   }
 
+  adminUser(event) {
+    event.preventDefault();
+    console.log(event);
+  }
 }
