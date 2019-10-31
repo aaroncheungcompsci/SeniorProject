@@ -12,6 +12,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
 import { ViewAppsComponent } from './view-apps/view-apps.component';
 import { EmailButtonComponent } from './email-button/email-button.component';
+import { RegisterComponent } from './register/register.component';
+
+/** TODO: remove when this is no longer needed */
+import 'hammerjs';
 
 @NgModule({
   declarations: [
@@ -21,7 +25,8 @@ import { EmailButtonComponent } from './email-button/email-button.component';
     HomeComponent,
     HeaderComponent,
     ViewAppsComponent,
-    EmailButtonComponent
+    EmailButtonComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -36,6 +41,11 @@ import { EmailButtonComponent } from './email-button/email-button.component';
         component: AdminComponent
       },
       {
+        path: 'register',
+        component: RegisterComponent
+      },
+      {
+        //ANY NEW COMPONENTS NEED TO BE PLACED BEFORE THIS ONE
         path: '',
         component: HomeComponent
       },
@@ -50,7 +60,8 @@ import { EmailButtonComponent } from './email-button/email-button.component';
     MatCardModule,
     MatSortModule,
     MatButtonModule,
-    MatInputModule
+    MatInputModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
