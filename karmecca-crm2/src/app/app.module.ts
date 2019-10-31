@@ -31,6 +31,8 @@ import { ApplicationtableComponent } from './applicationtable/applicationtable.c
 import { HeaderComponent } from './header/header.component';
 import { RegisterconfirmComponent } from './registerconfirm/registerconfirm.component';
 
+import { MaterialModule } from '../material.module';
+import { ModalComponent } from './modal/modal.component';
 
 
 @NgModule({
@@ -50,7 +52,8 @@ import { RegisterconfirmComponent } from './registerconfirm/registerconfirm.comp
 
 
     ViewAppsComponent,
-    EmailButtonComponent
+    EmailButtonComponent,
+    ModalComponent
 
 
   ],
@@ -104,10 +107,10 @@ import { RegisterconfirmComponent } from './registerconfirm/registerconfirm.comp
     MatSortModule,
     MatButtonModule,
     MatInputModule,
-    BrowserAnimationsModule
-
+    MaterialModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ModalComponent]
 })
 export class AppModule { }
