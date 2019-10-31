@@ -21,6 +21,7 @@ import 'hammerjs';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { ApplicationtableComponent } from './applicationtable/applicationtable.component';
+import { RegisterconfirmComponent } from './registerconfirm/registerconfirm.component';
 
 
 
@@ -33,6 +34,7 @@ import { ApplicationtableComponent } from './applicationtable/applicationtable.c
     HomeComponent,
     RegisterComponent,
     ApplicationtableComponent,
+    RegisterconfirmComponent,
 
   ],
   imports: [
@@ -56,6 +58,10 @@ import { ApplicationtableComponent } from './applicationtable/applicationtable.c
       {
         path: 'applicationtable',
         component: ApplicationtableComponent
+      },
+      {
+        path: 'registerconfirm',
+        component: RegisterconfirmComponent
       },
       {
         //ANY NEW COMPONENTS NEED TO BE PLACED BEFORE THIS ONE
