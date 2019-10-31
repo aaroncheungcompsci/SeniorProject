@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MatTableModule, MatToolbarModule, MatCardModule } from '@angular/material'
+import { MatTableModule, MatToolbarModule, MatCardModule, MatSortModule, MatButtonModule, MatInputModule } from '@angular/material'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -36,12 +36,19 @@ import { ViewAppsComponent } from './view-apps/view-apps.component';
       {
         path: '',
         component: HomeComponent
+      },
+      {
+        path: 'viewApps',
+        component: ViewAppsComponent
       }
     ]),
     BrowserAnimationsModule,
     MatTableModule,
     MatToolbarModule,
-    MatCardModule
+    MatCardModule,
+    MatSortModule,
+    MatButtonModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
