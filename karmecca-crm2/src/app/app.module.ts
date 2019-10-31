@@ -13,7 +13,9 @@ import { MatTableModule } from '@angular/material';
 import {UserTableComponent} from './components/user-table/user-table.component';
 import {HttpClientModule} from '@angular/common/http';
 import {UserService} from './services/user.service';
-
+import { PostCreateComponent } from './posts/post-create/post-create.component';
+import {FormsModule} from '@angular/forms';
+import {MatInputModule, MatCardModule, MatButtonModule, MatToolbarModule} from '@angular/material';
 /** TODO: remove when this is no longer needed */
 import 'hammerjs';
 
@@ -21,12 +23,15 @@ import 'hammerjs';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { ApplicationtableComponent } from './applicationtable/applicationtable.component';
+import { HeaderComponent } from './header/header.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    PostCreateComponent,
+    HeaderComponent,
     LoginComponent,
     AdminComponent,
     UserTableComponent,
@@ -37,8 +42,11 @@ import { ApplicationtableComponent } from './applicationtable/applicationtable.c
   ],
   imports: [
     BrowserModule,
-
-
+    FormsModule,
+    MatInputModule,
+    MatButtonModule,
+    MatCardModule,
+    MatToolbarModule,
     AppRoutingModule,
     RouterModule.forRoot([
       {

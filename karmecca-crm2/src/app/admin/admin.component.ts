@@ -13,7 +13,7 @@ export class AdminComponent implements OnInit {
   }
 
   adminUser(event) {
-    event.preventDefault()
-    console.log(event)
+    event.preventDefault();
+    console.log(event);
   }
 }
