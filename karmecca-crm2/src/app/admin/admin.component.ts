@@ -7,7 +7,8 @@ import { ModalComponent } from '../modal/modal.component';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
-
+  public show:boolean = false;
+  public buttonName:any = 'Show';
   constructor(public dialog: MatDialog) { }
 
   ngOnInit() {
@@ -23,6 +24,10 @@ export class AdminComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
+      this.toggle()
     });
+  }
+  toggle() {
+    this.show = !this.show;
   }
 }

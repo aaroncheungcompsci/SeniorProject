@@ -35,12 +35,19 @@
         <tr>
           <td>Luffy</td>
           <td>Pending</td>
-          <td align="center"><button mat-raised-button (click)="openDialog()"> Accept</button><button mat-raised-button (click)="openDialog()">Rejecte</button></td>
+          <td align="center"><button mat-raised-button (click)="openDialog()"> Accept</button><button mat-raised-button (click)="openDialog()">Reject</button></td>
         </tr>
-        <tr>          
+        <tr>
+          <ng-container *ngIf="show">       
           <td>Nami</td>
           <td>Pending</td>
-          <td align="center"><button type="submit">Accept</button><button onclick="rejectAlert() " type="submit">Reject</button></td>
+          <td align="center"><button type="submit">Accept</button><button (click)="toggle()">Reject</button></td>
+          </ng-container>   
+        </tr>
+        <tr>
+            <button (click)="toggle()" id="bt">
+                {{buttonName}}
+            </button>
         </tr>
 
     </table>
