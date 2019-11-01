@@ -34,6 +34,7 @@ import { RegisterconfirmComponent } from './registerconfirm/registerconfirm.comp
 import { MaterialModule } from '../material.module';
 import { ModalComponent } from './modal/modal.component';
 
+import { ReviewApplicantComponent} from '../app/reviewapplicant/reviewapplicant.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { ModalComponent } from './modal/modal.component';
 
     ViewAppsComponent,
     EmailButtonComponent,
+    ReviewApplicantComponent,
     ModalComponent
 
 
@@ -87,6 +89,10 @@ import { ModalComponent } from './modal/modal.component';
         component: RegisterconfirmComponent
       },
       {
+        path: 'home',
+        component: HomeComponent
+      },
+      {
         // ANY NEW COMPONENTS NEED TO BE PLACED BEFORE THIS ONE
         path: '',
         component: HomeComponent
@@ -94,6 +100,10 @@ import { ModalComponent } from './modal/modal.component';
       {
         path: 'viewApps',
         component: ViewAppsComponent
+      },
+      {
+        path: 'reviewapplicant',
+        component: ReviewApplicantComponent
       }
     ]),
     BrowserAnimationsModule,
