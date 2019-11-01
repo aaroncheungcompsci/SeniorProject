@@ -7,7 +7,7 @@ import { ApplicationtableDataSource, ApplicationtableItem } from './applicationt
 @Component({
   selector: 'app-applicationtable',
   templateUrl: './applicationtable.component.html',
-  styleUrls: ['./applicationtable.component.css']
+  styleUrls: ['./applicationtable.component.css'],
 })
 export class ApplicationtableComponent implements AfterViewInit, OnInit {
   @ViewChild(MatPaginator, {static: false}) paginator: MatPaginator;
@@ -27,5 +27,4 @@ export class ApplicationtableComponent implements AfterViewInit, OnInit {
     this.dataSource.paginator = this.paginator;
     this.table.dataSource = this.dataSource;
   }
-
 }
