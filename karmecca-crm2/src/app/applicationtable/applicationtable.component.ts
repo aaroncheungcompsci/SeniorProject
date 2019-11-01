@@ -20,11 +20,12 @@ export class ApplicationtableComponent implements AfterViewInit, OnInit {
 
   ngOnInit() {
     this.dataSource = new ApplicationtableDataSource();
-  }
 
+  }
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
     this.table.dataSource = this.dataSource;
   }
+
 }
