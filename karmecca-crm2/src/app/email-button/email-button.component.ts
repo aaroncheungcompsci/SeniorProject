@@ -1,0 +1,15 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-email-button',
+  templateUrl: './email-button.component.html',
+  styleUrls: ['./email-button.component.css']
+})
+export class EmailButtonComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}
