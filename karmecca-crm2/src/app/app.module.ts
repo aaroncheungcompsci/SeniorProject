@@ -16,7 +16,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {UserService} from './services/user.service';
 import { PostCreateComponent } from './posts/post-create/post-create.component';
 import {FormsModule} from '@angular/forms';
-import { MatCard} from '@angular/material';
+// import { MatCard} from '@angular/material';
 // import {MatInputModule, MatCardModule, MatButtonModule, MatToolbarModule} from '@angular/material';
 
 import { HeaderComponent } from './header/header.component';
@@ -65,7 +65,6 @@ import { RegisterconfirmComponent } from './registerconfirm/registerconfirm.comp
     MatButtonModule,
     MatCardModule,
     MatToolbarModule,
-    MatCard,
     AppRoutingModule,
     RouterModule.forRoot([
       {
