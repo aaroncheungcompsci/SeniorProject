@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MatTableModule, MatToolbarModule, MatCardModule, MatSortModule, MatButtonModule, MatInputModule } from '@angular/material'
+import { MatTableModule, MatToolbarModule, MatCardModule, MatSortModule, MatButtonModule, MatInputModule, MatIconModule } from '@angular/material'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -36,6 +36,7 @@ import { ModalComponent } from './modal/modal.component';
 
 import { ReviewApplicantComponent} from '../app/reviewapplicant/reviewapplicant.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -67,6 +68,7 @@ import { ReviewApplicantComponent} from '../app/reviewapplicant/reviewapplicant.
     MatCardModule,
     MatToolbarModule,
     AppRoutingModule,
+    MatIconModule,
     RouterModule.forRoot([
       {
         path: 'login',
