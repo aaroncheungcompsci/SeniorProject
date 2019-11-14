@@ -35,6 +35,7 @@ import { MaterialModule } from '../material.module';
 import { ModalComponent } from './modal/modal.component';
 
 import { ReviewApplicantComponent} from '../app/reviewapplicant/reviewapplicant.component';
+import { HopbarComponent } from './hopbar/hopbar.component';
 
 
 @NgModule({
@@ -56,7 +57,8 @@ import { ReviewApplicantComponent} from '../app/reviewapplicant/reviewapplicant.
     ViewAppsComponent,
     EmailButtonComponent,
     ReviewApplicantComponent,
-    ModalComponent
+    ModalComponent,
+    HopbarComponent
 
 
   ],
