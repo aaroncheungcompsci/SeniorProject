@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // import { MatTableModule } from '@angular/material';
 import {UserTableComponent} from './components/user-table/user-table.component';
+import {UsertableComponent} from './components/usertable/usertable.component';
 import {HttpClientModule} from '@angular/common/http';
 import {UserService} from './services/user.service';
 import { PostCreateComponent } from './posts/post-create/post-create.component';
@@ -44,7 +45,7 @@ import { RegisterconfirmComponent } from './registerconfirm/registerconfirm.comp
     HeaderComponent,
     LoginComponent,
     AdminComponent,
-    UserTableComponent,
+    UsertableComponent,
     HomeComponent,
 
     RegisterComponent,
@@ -54,7 +55,8 @@ import { RegisterconfirmComponent } from './registerconfirm/registerconfirm.comp
 
 
     ViewAppsComponent,
-    EmailButtonComponent
+    EmailButtonComponent,
+    UserTableComponent
 
 
   ],
@@ -84,6 +86,10 @@ import { RegisterconfirmComponent } from './registerconfirm/registerconfirm.comp
         component: ApplicationtableComponent
       },
       {
+        path: 'usertable',
+        component: UsertableComponent
+      },
+      {
         path: 'registerconfirm',
         component: RegisterconfirmComponent
       },
@@ -99,10 +105,9 @@ import { RegisterconfirmComponent } from './registerconfirm/registerconfirm.comp
     ]),
     BrowserAnimationsModule,
     MatTableModule,
-
+    HttpClientModule,
     MatPaginatorModule,
     MatSortModule,
-
     MatToolbarModule,
     MatCardModule,
     MatSortModule,
@@ -111,7 +116,7 @@ import { RegisterconfirmComponent } from './registerconfirm/registerconfirm.comp
     BrowserAnimationsModule
 
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
