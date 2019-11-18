@@ -31,7 +31,7 @@
     <!-- Actions Column -->
     <ng-container matColumnDef="actions">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Actions</th>
-      <td mat-cell *matCellDef="let row"><button mat-raised-button id ="1" (click)="openDialog(1)">Review</button>
+      <td mat-cell *matCellDef="let row"><button  (click)="openDialog(row.id)">Review</button></td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
