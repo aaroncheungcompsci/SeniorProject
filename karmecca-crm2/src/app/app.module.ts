@@ -38,6 +38,8 @@ import { ModalComponent } from './modal/modal.component';
 import { ReviewApplicantComponent} from '../app/reviewapplicant/reviewapplicant.component';
 import { HopbarComponent } from './hopbar/hopbar.component';
 
+import { HeaderComponent } from './header/header.component';
+
 
 @NgModule({
   declarations: [
@@ -113,6 +115,10 @@ import { HopbarComponent } from './hopbar/hopbar.component';
       {
         path: 'reviewapplicant',
         component: ReviewApplicantComponent
+      },
+      {
+        path: 'header',
+        component: HeaderComponent
       }
     ]),
     BrowserAnimationsModule,

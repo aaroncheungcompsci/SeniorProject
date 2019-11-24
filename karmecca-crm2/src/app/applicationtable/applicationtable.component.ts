@@ -3,14 +3,12 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
 import { ApplicationtableDataSource, ApplicationtableItem } from './applicationtable-datasource';
-<<<<<<< karmecca-crm2/src/app/applicationtable/applicationtable.component.ts
 
 import { MatCard } from '@angular/material';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { ModalComponent } from '../modal/modal.component';
 import { DialogData } from '../DialogData';
 
->>>>>>> karmecca-crm2/src/app/applicationtable/applicationtable.component.ts
 
 @Component({
   selector: 'app-applicationtable',
@@ -38,14 +36,11 @@ export class ApplicationtableComponent implements AfterViewInit, OnInit {
 
   ngOnInit() {
     this.dataSource = new ApplicationtableDataSource();
-
-<<<<<<< karmecca-crm2/src/app/applicationtable/applicationtable.component.ts
+  }
   onClick(){
     console.log('more app details');
 
     this.details = 'More user application details!';
-=======
->>>>>>> karmecca-crm2/src/app/applicationtable/applicationtable.component.ts
   }
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
