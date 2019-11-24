@@ -6,24 +6,28 @@ import { Observable, of as observableOf, merge } from 'rxjs';
 
 // TODO: Replace this with your own data model type
 export interface ApplicationtableItem {
-  name: string;
   id: number;
+  name: string;
   category: string;
   date: string ;
+  email: string;
+  phone: string;
+  car: string;
+  venmo: string;
 }
 
 // TODO: replace this with real data from your application
 const EXAMPLE_DATA: ApplicationtableItem[] = [
-  {id: 1, name: 'Harry Smith', category: 'Volunteer', date:'Apr 4, 2019' },
-  {id: 2, name: 'Janet Rodriguez', category: 'Car', date:'March 4, 2018'},
-  {id: 3, name: 'Bobby Styles', category: 'Vendor', date:'Apr 4, 2019'},
-  {id: 4, name: 'Jim Bob', category: 'Car', date:'Apr 4, 2019'},
-  {id: 5, name: 'Enrique Martin', category: 'Vendor', date:'Jan 26, 2019'},
-  {id: 6, name: 'Brandon Roberts', category: 'Car', date:'Feb 9, 2018'},
-  {id: 7, name: 'Matthew Cameron', category: 'Volunteer', date: 'Apr 4, 2019'},
-  {id: 8, name: 'Sheila Moe', category: 'Volunteer', date:'Apr 4, 2019'},
-  {id: 9, name: 'Stephanie Gates', category: 'Car', date:'Apr 4, 2019'},
-  {id: 10, name: 'Zane Beaux', category: 'Volunteer', date:'Apr 4, 2019'},
+  {id: 1, name: 'Harry Smith', category: 'Volunteer', date:'Apr 4, 2019',email:'testemail@yahoo.com',phone:'111-1111',car:'Acura RSX',venmo:'TestVenmo' },
+  {id: 2, name: 'Janet Rodriguez', category: 'Car', date:'March 4, 2018',email:'testemail@yahoo.com',phone:'111-1111',car:'Acura RSX',venmo:'TestVenmo'},
+  {id: 3, name: 'Bobby Styles', category: 'Vendor', date:'Apr 4, 2019',email:'testemail@yahoo.com',phone:'111-1111',car:'Acura RSX',venmo:'TestVenmo'},
+  {id: 4, name: 'Jim Bob', category: 'Car', date:'Apr 4, 2019',email:'testemail@yahoo.com',phone:'111-1111',car:'Acura RSX',venmo:'TestVenmo'},
+  {id: 5, name: 'Enrique Martin', category: 'Vendor', date:'Jan 26, 2019',email:'testemail@yahoo.com',phone:'111-1111',car:'Acura RSX',venmo:'TestVenmo'},
+  {id: 6, name: 'Brandon Roberts', category: 'Car', date:'Feb 9, 2018',email:'testemail@yahoo.com',phone:'111-1111',car:'Acura RSX',venmo:'TestVenmo'},
+  {id: 7, name: 'Matthew Cameron', category: 'Volunteer', date: 'Apr 4, 2019',email:'testemail@yahoo.com',phone:'111-1111',car:'Acura RSX',venmo:'TestVenmo'},
+  {id: 8, name: 'Sheila Moe', category: 'Volunteer', date:'Apr 4, 2019',email:'testemail@yahoo.com',phone:'111-1111',car:'Acura RSX',venmo:'TestVenmo'},
+  {id: 9, name: 'Stephanie Gates', category: 'Car', date:'Apr 4, 2019',email:'testemail@yahoo.com',phone:'111-1111',car:'Acura RSX',venmo:'TestVenmo'},
+  {id: 10, name: 'Zane Beaux', category: 'Volunteer', date:'Apr 4, 2019',email:'testemail@yahoo.com',phone:'111-1111',car:'Acura RSX',venmo:'TestVenmo'},
 
 ];
 
@@ -94,6 +98,10 @@ export class ApplicationtableDataSource extends DataSource<ApplicationtableItem>
         default: return 0;
       }
     });
+  }
+  public returnRow(id)
+  {
+    return this.data.find(x => x.id === id);
   }
 }
 

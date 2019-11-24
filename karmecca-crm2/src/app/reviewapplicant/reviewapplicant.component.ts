@@ -2,11 +2,11 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { ModalComponent } from '../modal/modal.component';
 @Component({
-  selector: 'app-admin',
-  templateUrl: './admin.component.html',
-  styleUrls: ['./admin.component.css']
+  selector: 'app-reviewapplicant',
+  templateUrl: './reviewapplicant.component.html',
+  styleUrls: ['./reviewapplicant.component.css']
 })
-export class AdminComponent implements OnInit {
+export class ReviewApplicantComponent implements OnInit {
   public show:boolean = false;
   public buttonName:any = 'Show';
   constructor(public dialog: MatDialog) { }
