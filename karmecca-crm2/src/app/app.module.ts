@@ -11,6 +11,7 @@ import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {UserTableComponent} from './components/user-table/user-table.component';
+import {UsertableComponent} from './components/usertable/usertable.component';
 import {HttpClientModule} from '@angular/common/http';
 import {UserService} from './services/user.service';
 import { PostCreateComponent } from './posts/post-create/post-create.component';
@@ -28,7 +29,7 @@ import 'hammerjs';
 import { MatPaginatorModule } from '@angular/material/paginator';
 
 import { ApplicationtableComponent } from './applicationtable/applicationtable.component';
-import { HeaderComponent } from './header/header.component';
+// import { HeaderComponent } from './header/header.component';
 import { RegisterconfirmComponent } from './registerconfirm/registerconfirm.component';
 
 import { MaterialModule } from '../material.module';
@@ -45,7 +46,7 @@ import { HopbarComponent } from './hopbar/hopbar.component';
     HeaderComponent,
     LoginComponent,
     AdminComponent,
-    UserTableComponent,
+    UsertableComponent,
     HomeComponent,
 
     RegisterComponent,
@@ -89,6 +90,10 @@ import { HopbarComponent } from './hopbar/hopbar.component';
         component: ApplicationtableComponent
       },
       {
+        path: 'usertable',
+        component: UsertableComponent
+      },
+      {
         path: 'registerconfirm',
         component: RegisterconfirmComponent
       },
@@ -112,10 +117,9 @@ import { HopbarComponent } from './hopbar/hopbar.component';
     ]),
     BrowserAnimationsModule,
     MatTableModule,
-
+    HttpClientModule,
     MatPaginatorModule,
     MatSortModule,
-
     MatToolbarModule,
     MatCardModule,
     MatSortModule,

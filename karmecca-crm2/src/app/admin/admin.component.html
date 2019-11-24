@@ -22,20 +22,20 @@
                <option value = "4">Pending</option>
              </select>
           </p>
-       
 
-    <table id="applicants"> 
-        <tr> 
+
+    <table id="applicants">
+        <tr>
             <th onclick="sortTable(0)">Name</th>
             <th onclick="sortTable(1)">Status</th>
             <th>Actions</th>
-        </tr> 
+        </tr>
         <tr>
              <td>Bob</td>
               <td>Complete</td>
               <!--These are the button for Actions and will need to configure onClick actions-->
               <td align="center"><button type="submit">Edit</button> <button type="submit">Delete</button></td>
-        </tr> 
+        </tr>
         <tr>
           <td>Luffy</td>
           <td>Pending</td>
@@ -55,7 +55,7 @@
         </tr>
 
     </table>
-
+parkerparpp
     <!--Sort function-->
     <script>
         function sortTable(n) {
@@ -63,7 +63,7 @@
           table = document.getElementById("applicants");
           switching = true;
           // Set the sorting direction to ascending:
-          dir = "asc"; 
+          dir = "asc";
           /* Make a loop that will continue until
           no switching has been done: */
           while (switching) {
@@ -101,7 +101,7 @@
               rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
               switching = true;
               // Each time a switch is done, increase this count by 1:
-              switchcount ++; 
+              switchcount ++;
             } else {
               /* If no switching has been done AND the direction is "asc",
               set the direction to "desc" and run the while loop again. */
