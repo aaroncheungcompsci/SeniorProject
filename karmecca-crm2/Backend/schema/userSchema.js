@@ -10,11 +10,11 @@ var customerSchema = new mongoose.Schema({
     name: String,
     email: String,
     car: String,
-    approved: Boolean,
+    //approved: Boolean,
     created_at: {type: Date, default: Date.now}
 })
 
 //create model called User which uses schema userSchema
-mongoose.model("User", userSchema);
+mongoose.model('User', userSchema);
 //create model called Customer which uses schema customerSchema
-mongoose.model("Customer", customerSchema);
+mongoose.model('Customer', customerSchema);
