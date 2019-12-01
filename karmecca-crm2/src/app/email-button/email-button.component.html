@@ -1,4 +1,3 @@
-<app-header></app-header>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -27,7 +26,6 @@ button:hover {
     background-color: #2b46bd;
     border-radius: 12px;
 }
-
 .container {
   padding: 16px;
 }
@@ -48,19 +46,14 @@ span.psw {
 </style>
 </head>
 <body>
+
 <form>
-  <div class="container" style="background-color: white">
-    <button type ="button" class="emailbtn">Send Email</button>
-  </div>
+  <button
+    mat-raised-button
+    class="emailbtn"
+    (click)="register()"
+  >
+    Send Email
+  </button>
 </form>
 </body>
-</html>
-
-<!-- <p>
-    Dear Applicant,
-    You have been approved!
-</p>
-<p>
-    Dear Applicant,
-    You have been denied.
-</p> -->
