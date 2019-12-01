@@ -7,6 +7,8 @@ import { User } from '../../models/user.model';
 import {MatSort, MatPaginator} from '@angular/material';
 import { Observable, of as observableOf, merge } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+// import { DialogData } from '../DialogData';
 
 @Component({
   selector: 'app-usertable',
@@ -16,7 +18,7 @@ import { map } from 'rxjs/operators';
 export class UsertableComponent implements OnInit {
 
   dataSource = new UserDataSource(this.userService);
-  displayedColumns = ['name', 'email', 'phone', 'company'];
+  displayedColumns = ['name', 'email', 'phone', 'company', 'action'];
   constructor(private userService: UserService) { }
 
 
