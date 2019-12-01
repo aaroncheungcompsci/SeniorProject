@@ -1,24 +1,36 @@
-<app-hopbar></app-hopbar>
-
-<div>
-  <mat-table [dataSource]="dataSource">
+<p>usertable works!</p>
+<div class="mat-elevation-z8 usertable">
+  <table mat-table matSort aria-label= "Elements" [dataSource]="dataSource">
     <ng-container matColumnDef="name">
-      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
       <mat-cell *matCellDef="let user"> {{user.name}} </mat-cell>
     </ng-container>
     <ng-container matColumnDef="email">
-      <mat-header-cell *matHeaderCellDef> E-Mail </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header> E-Mail </mat-header-cell>
       <mat-cell *matCellDef="let user"> {{user.email}} </mat-cell>
     </ng-container>
+    <ng-container matColumnDef="category">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Category </mat-header-cell>
+      <mat-cell *matCellDef="let user"> {{user.category}} </mat-cell>
+    </ng-container>
     <ng-container matColumnDef="phone">
-      <mat-header-cell *matHeaderCellDef> Phone </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Phone </mat-header-cell>
       <mat-cell *matCellDef="let user"> {{user.phone}} </mat-cell>
     </ng-container>
-    <ng-container matColumnDef="company">
-      <mat-header-cell *matHeaderCellDef> Company </mat-header-cell>
-      <mat-cell *matCellDef="let user"> {{user.company.name}} </mat-cell>
+    <ng-container matColumnDef="venmo">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Venmo </mat-header-cell>
+      <mat-cell *matCellDef="let user"> {{user.venmo}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="car">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Car </mat-header-cell>
+      <mat-cell *matCellDef="let user"> {{user.car}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="action">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Actions </mat-header-cell>
+      <mat-cell *matCellDef="let user"><button> Review </button> </mat-cell>
     </ng-container>
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-  </mat-table>
+  </table>
+
 </div>
