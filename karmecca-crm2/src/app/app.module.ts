@@ -39,6 +39,7 @@ import { ReviewApplicantComponent} from '../app/reviewapplicant/reviewapplicant.
 import { HopbarComponent } from './hopbar/hopbar.component';
 
 import { HeaderComponent } from './header/header.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
 
 
 @NgModule({
@@ -61,7 +62,8 @@ import { HeaderComponent } from './header/header.component';
     EmailButtonComponent,
     ReviewApplicantComponent,
     ModalComponent,
-    HopbarComponent
+    HopbarComponent,
+    AboutusComponent
 
 
   ],
@@ -102,6 +104,10 @@ import { HeaderComponent } from './header/header.component';
       {
         path: 'home',
         component: HomeComponent
+      },
+      {
+        path: 'aboutus',
+        component: AboutusComponent
       },
       {
         // ANY NEW COMPONENTS NEED TO BE PLACED BEFORE THIS ONE
