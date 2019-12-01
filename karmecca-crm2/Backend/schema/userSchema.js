@@ -10,7 +10,7 @@ var customerSchema = new mongoose.Schema({
     name: String,
     email: String,
     car: String,
-    //approved: Boolean,
+    approved: Boolean,
     created_at: {type: Date, default: Date.now}
 })
 

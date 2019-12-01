@@ -1,11 +1,11 @@
-var mongoose = require('mongoose');
 var express = require('express');
 var router = express.Router();
+var mongoose = require('mongoose');
 var Customer = mongoose.model('Customer')
 
 
 
-/*//Used for routes that must be authenticated.
+//Used for routes that must be authenticated.
 function isAuthenticated (req, res, next) {
 	// if user is authenticated in the session, call the next() to call the next request handler 
 	// Passport adds this method to request object. A middleware is allowed to add properties to
@@ -22,23 +22,25 @@ function isAuthenticated (req, res, next) {
 	return res.redirect('/#login');
 };
 //Register the authentication middleware
-router.use('/customers', isAuthenticated);*/
+router.use('/customers', isAuthenticated);
 
 router.route('/customers')
-    //create a new post
+    //create a new customer
 	.post(function(req, res){
+		//var jsonData = JSON.parse(req.body);
 		var newCustomer = new Customer();
 		newCustomer.name = req.body.name;
 		newCustomer.email = req.body.email;
 		newCustomer.car = req.body.car;
-		//newCustomer.approved = req.body.approved;
+		newCustomer.approved = req.body.approved;
 		newCustomer.save(function(err, customer){
 			if (err){
 				return res.send(500, err);
 			}
 			return res.json(customer);
 		});
-    })
+	})
+	
     //get all customers
 	.get(function(req, res){
 		Customer.find(function(err, customers){
