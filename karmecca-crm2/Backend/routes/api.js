@@ -1,7 +1,9 @@
-var mongoose = require('mongoose');
-var Customer = mongoose.model('Customers')
 var express = require('express');
 var router = express.Router();
+var mongoose = require('mongoose');
+var Customer = mongoose.model('Customer')
+
+
 
 //Used for routes that must be authenticated.
 function isAuthenticated (req, res, next) {
@@ -23,17 +25,29 @@ function isAuthenticated (req, res, next) {
 router.use('/customers', isAuthenticated);
 
 router.route('/customers')
-    //create a new post
+    //create a new customer
 	.post(function(req, res){
-		res.send({message:"TODO create a new customer in the database"});
-    })
+		//var jsonData = JSON.parse(req.body);
+		var newCustomer = new Customer();
+		newCustomer.name = req.body.name;
+		newCustomer.email = req.body.email;
+		newCustomer.car = req.body.car;
+		newCustomer.approved = req.body.approved;
+		newCustomer.save(function(err, customer){
+			if (err){
+				return res.send(500, err);
+			}
+			return res.json(customer);
+		});
+	})
+	
     //get all customers
 	.get(function(req, res){
-		Post.find(function(err, posts){
+		Customer.find(function(err, customers){
 			if(err){
 				return res.send(500, err);
 			}
-			return res.send(posts);
+			return res.send(customers);
 		});
 	});
 
@@ -51,4 +65,4 @@ router.route('/customers/:id')
 	.delete(function(req,res){
 		return res.send({message:'TODO delete an existing customer by using param ' + req.param.id})
     });
-module.exports = router();
+module.exports = router;

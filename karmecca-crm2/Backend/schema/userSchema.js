@@ -15,6 +15,6 @@ var customerSchema = new mongoose.Schema({
 })
 
 //create model called User which uses schema userSchema
-mongoose.model("User", userSchema);
+mongoose.model('User', userSchema);
 //create model called Customer which uses schema customerSchema
-mongoose.model("Customer", customerSchema);
+mongoose.model('Customer', customerSchema);
