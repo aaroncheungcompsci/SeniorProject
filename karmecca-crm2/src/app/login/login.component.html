@@ -1,25 +1,34 @@
+<app-hopbar></app-hopbar>
 <form action="/action_page.php">
     <div class="imgcontainer" style= "background-color: black">
       <img src="\assets\bwlogo.png" alt="Karmecca logo in Black and white" class="bwlogo">
     </div>
   
-    <div class="container">
+    <div class="container" >
+      <mat-card>
       <!-- Username Field -->
-      <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
-      
+        <mat-card class="Username">
+          <label for="uname"><b>Username</b></label><br>
+          <input type="text" placeholder="Enter Username" name="uname" required>
+        </mat-card>
+
       <!-- Password Field-->
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
-  
-      <button type="submit">Login</button>
+        <mat-card class="Password">
+          <label for="psw"><b>Password</b></label><br>
+          <input type="password" placeholder="Enter Password" name="psw" required>
+        </mat-card>
+        
+      <mat-card>
+        <button type="submit">Login</button>
       
-      <!-- Register button -->
-      <button type="button" class="registerbtn" onclick="location.href='../register'">Register</button>
+        <!-- Register button -->
+        <button type="button" class="registerbtn" onclick="location.href='../register'">Register</button>
       
-      <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me
-      </label>
+        <label>
+          <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+      </mat-card>
+    </mat-card>
     </div>
   
     <div class="container" style="background-color:#f1f1f1">

@@ -1,0 +1,17 @@
+<h1 mat-dialog-title>Account Information</h1>
+<p >
+  ID: {{data.id}}<br/>
+  Name: {{data.name}}<br/>
+  Category: {{data.category}}<br/>
+  Date: {{data.date}}<br/>
+  Email: {{data.email}}<br/>
+  Car: {{data.car}}<br/>
+  Venmo: {{data.venmo}}<br/>
+  Phone: {{data.phone}}<br/>
+</p>
+
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Accept</button>
+  <button mat-button (click)="onNoClick()">Reject</button>
+</div>
+

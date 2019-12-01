@@ -1,3 +1,7 @@
+<app-hopbar></app-hopbar>
+
+<!-- <p><button><a routerLink = "/home">Home</a></button></p>
+<p><button><a routerLink = "/reviewapplicant">review--will be removed</a></button></p> -->
 <!DOCTYPE HTML>
 <html lang = "en">
   <head>
@@ -5,8 +9,8 @@
     <meta charset = "UTF-8" />
   </head>
   <body>
-
-
+          
+       
           <h1>Car Applications</h1>
           <p>
              <label>Filter By </label>
@@ -35,12 +39,19 @@
         <tr>
           <td>Luffy</td>
           <td>Pending</td>
-          <td align="center"><button type="submit">Accept</button><button onclick="rejectAlert() ">Reject</button></td>
+          <td align="center"><button mat-raised-button (click)="openDialog()"> Accept</button><button mat-raised-button (click)="openDialog()">Reject</button></td>
         </tr>
         <tr>
+          <ng-container *ngIf="show">       
           <td>Nami</td>
           <td>Pending</td>
-          <td align="center"><button type="submit">Accept</button><button onclick="rejectAlert() " type="submit">Reject</button></td>
+          <td align="center"><button type="submit">Accept</button><button (click)="toggle()">Reject</button></td>
+          </ng-container>   
+        </tr>
+        <tr>
+            <button (click)="toggle()" id="bt">
+                {{buttonName}}
+            </button>
         </tr>
 
     </table>

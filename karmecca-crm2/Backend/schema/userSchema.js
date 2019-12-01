@@ -1,24 +1,20 @@
-const mongoose = require('mongoose')
+var mongoose = require('mongoose');
 
-const userSchema = new mongoose.Schema({
-  username: {
-    type: String,
-    required: [true, 'Username is required']
-  },
+var userSchema = new mongoose.Schema({
+    username: String,
+    password: String,
+    created_at: {type: Date, default: Date.now}
+});
 
-  email: {
-    type: String,
-    required: true,
-    unique: true,
-    lowercase: true,
-    validate: (value) => {
-      return validator.isEmail(value)}
-  },
-
-  created: {
-    type: Date,
-    required: [true, 'Created date is required']
-  }
+var customerSchema = new mongoose.Schema({
+    name: String,
+    email: String,
+    car: String,
+    approved: Boolean,
+    created_at: {type: Date, default: Date.now}
 })
 
-module.exports = userSchema
+//create model called User which uses schema userSchema
+mongoose.model('User', userSchema);
+//create model called Customer which uses schema customerSchema
+mongoose.model('Customer', customerSchema);
