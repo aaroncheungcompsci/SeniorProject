@@ -20,6 +20,8 @@ import {FormsModule} from '@angular/forms';
 import { ViewAppsComponent } from './view-apps/view-apps.component';
 import { EmailButtonComponent } from './email-button/email-button.component';
 import { RegisterComponent } from './register/register.component';
+import { HttpService } from './Shared/http.service';
+
 
 
 /** TODO: remove when this is no longer needed */
@@ -39,6 +41,7 @@ import { ReviewApplicantComponent} from '../app/reviewapplicant/reviewapplicant.
 import { HopbarComponent } from './hopbar/hopbar.component';
 
 import { HeaderComponent } from './header/header.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
 
 
 @NgModule({
@@ -61,7 +64,8 @@ import { HeaderComponent } from './header/header.component';
     EmailButtonComponent,
     ReviewApplicantComponent,
     ModalComponent,
-    HopbarComponent
+    HopbarComponent,
+    AboutusComponent
 
 
   ],
@@ -104,6 +108,10 @@ import { HeaderComponent } from './header/header.component';
         component: HomeComponent
       },
       {
+        path: 'aboutus',
+        component: AboutusComponent
+      },
+      {
         // ANY NEW COMPONENTS NEED TO BE PLACED BEFORE THIS ONE
         path: '',
         component: HomeComponent
@@ -131,9 +139,10 @@ import { HeaderComponent } from './header/header.component';
     MatSortModule,
     MatButtonModule,
     MatInputModule,
-    MaterialModule
+    MaterialModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [HttpService],
   bootstrap: [AppComponent],
   entryComponents: [ModalComponent]
 })
