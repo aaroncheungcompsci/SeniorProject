@@ -18,7 +18,7 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 export class UsertableComponent implements OnInit {
 
   dataSource = new UserDataSource(this.userService);
-  displayedColumns = ['name', 'email', 'phone', 'company', 'action'];
+  displayedColumns = ['name', 'email', 'category', 'phone', 'venmo', 'car', 'action'];
   constructor(private userService: UserService) { }
 
 
