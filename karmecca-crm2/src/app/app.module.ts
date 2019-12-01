@@ -20,6 +20,8 @@ import {FormsModule} from '@angular/forms';
 import { ViewAppsComponent } from './view-apps/view-apps.component';
 import { EmailButtonComponent } from './email-button/email-button.component';
 import { RegisterComponent } from './register/register.component';
+import { HttpService } from './Shared/http.service';
+
 
 
 /** TODO: remove when this is no longer needed */
@@ -131,9 +133,10 @@ import { HeaderComponent } from './header/header.component';
     MatSortModule,
     MatButtonModule,
     MatInputModule,
-    MaterialModule
+    MaterialModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [HttpService],
   bootstrap: [AppComponent],
   entryComponents: [ModalComponent]
 })
