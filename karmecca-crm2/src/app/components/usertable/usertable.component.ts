@@ -1,9 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { UserService } from '../../services/user.service';
-import { Observable } from 'rxjs';
+// import { Observable } from 'rxjs';
 import {of} from 'rxjs';
 import {DataSource} from '@angular/cdk/collections';
 import { User } from '../../models/user.model';
+import {MatSort, MatPaginator} from '@angular/material';
+import { Observable, of as observableOf, merge } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+// import { DialogData } from '../DialogData';
 
 @Component({
   selector: 'app-usertable',
@@ -13,13 +18,16 @@ import { User } from '../../models/user.model';
 export class UsertableComponent implements OnInit {
 
   dataSource = new UserDataSource(this.userService);
-  displayedColumns = ['name', 'email', 'phone', 'company'];
+  displayedColumns = ['name', 'email', 'category', 'phone', 'venmo', 'car', 'action'];
   constructor(private userService: UserService) { }
 
-
+// @ViewChild(MatSort) sort: MatSort;
   ngOnInit() {
   }
 
+  /*ngAfterInit(): void {
+    this.dataSource.sort = this.sort;
+  }*/
 }
 
 export class UserDataSource extends DataSource<any> {
@@ -31,3 +39,5 @@ export class UserDataSource extends DataSource<any> {
   }
   disconnect() {}
 }
+
+

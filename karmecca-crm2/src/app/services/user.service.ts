@@ -9,7 +9,7 @@ import {User } from '../models/user.model';
 })
 export class UserService {
   private serviceUrl =
-  'https://jsonplaceholder.typicode.com/users';
+  'http://localhost:3001/api/customers';
 
 
   constructor(private http: HttpClient) { }
