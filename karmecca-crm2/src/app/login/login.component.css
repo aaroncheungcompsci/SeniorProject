@@ -1,7 +1,7 @@
-form {
+/* form {
     position: absolute;
-}
-
+} */
+/* 
 mat-card.Username {
     justify-content: center;
 }
@@ -12,5 +12,9 @@ mat-card.Password {
 
 div.login {
     float: right;
+} */
+.dinamic{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2em;
 }
-
