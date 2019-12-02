@@ -9,8 +9,11 @@ var userSchema = new mongoose.Schema({
 var customerSchema = new mongoose.Schema({
     name: String,
     email: String,
+    category: String,
+    phone: String,
+    venmo: String,
     car: String,
-    approved: Boolean,
+    approved: String,
     created_at: {type: Date, default: Date.now}
 })
 
