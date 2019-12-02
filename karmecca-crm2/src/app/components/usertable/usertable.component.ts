@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { UserService } from '../../services/user.service';
 // import { Observable } from 'rxjs';
 import {of} from 'rxjs';
@@ -21,10 +21,13 @@ export class UsertableComponent implements OnInit {
   displayedColumns = ['name', 'email', 'category', 'phone', 'venmo', 'car', 'action'];
   constructor(private userService: UserService) { }
 
-
+// @ViewChild(MatSort) sort: MatSort;
   ngOnInit() {
   }
 
+  /*ngAfterInit(): void {
+    this.dataSource.sort = this.sort;
+  }*/
 }
 
 export class UserDataSource extends DataSource<any> {
