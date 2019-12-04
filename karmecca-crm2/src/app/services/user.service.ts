@@ -8,13 +8,18 @@ import {User } from '../models/user.model';
   providedIn: 'root'
 })
 export class UserService {
+  data : User[];
   private serviceUrl =
   'http://localhost:3001/api/customers';
 
 
   constructor(private http: HttpClient) { }
 
+
   getUser(): Observable<User[]> {
     return this.http.get<User[]>(this.serviceUrl);
   }
+  
+  
 }
+
