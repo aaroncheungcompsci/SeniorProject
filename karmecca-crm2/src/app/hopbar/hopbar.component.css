@@ -3,6 +3,11 @@
     margin-right: 8px;
 }
 
+.button-row {
+    background-color:rgb(44, 44, 44);
+    color: white;
+}
+
 .title {
     margin-right: 16px;
     font-size: 1.5em;
