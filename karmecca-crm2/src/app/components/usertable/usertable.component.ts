@@ -21,6 +21,9 @@ export class UsertableComponent implements OnInit {
   displayedColumns = ['name', 'email', 'category', 'phone', 'venmo', 'car', 'action'];
   constructor(private userService: UserService) { }
 
+  /*applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }*/
 // @ViewChild(MatSort) sort: MatSort;
   ngOnInit() {
   }
