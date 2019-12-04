@@ -29,6 +29,7 @@ export class UsertableComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
+  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
 ngOnInit() {
@@ -40,8 +41,14 @@ ngOnInit() {
     this.ELEMENT_DATA = results;
     this.dataSource = new MatTableDataSource(this.ELEMENT_DATA);
     this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
   });
+
+
  }
+ public sendEmail(){
+  register();
+}
  public returnRow(id : string)
  {
    return this.users.find(x => x._id === id);

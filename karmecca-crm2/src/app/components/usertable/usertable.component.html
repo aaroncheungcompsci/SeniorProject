@@ -1,5 +1,6 @@
 <app-hopbar></app-hopbar>
-<div class="mat-elevation-z8 usertable">
+<br>
+<div class="table-container mat-elevation-z8 usertable">
   <!-- Filter Input Form -->
   <mat-form-field>
       <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
@@ -31,11 +32,10 @@
     </ng-container>
     <ng-container matColumnDef="action">
       <mat-header-cell *matHeaderCellDef mat-sort-header> Actions </mat-header-cell>
-<<<<<<< Updated upstream
-      <mat-cell *matCellDef="let user"><button mat-button (click)="openDialog(user._id)"><mat-icon>reorder</mat-icon></button></mat-cell>
-=======
-      <mat-cell *matCellDef="let user"><button> Review </button> </mat-cell>
->>>>>>> Stashed changes
+      <mat-cell *matCellDef="let user">
+        <button mat-button (click)="openDialog(user._id)"><mat-icon>reorder</mat-icon></button>
+        <button mat-button (click) = "sendEmail()">Button Name </button>
+      </mat-cell>
     </ng-container>
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>

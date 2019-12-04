@@ -16,4 +16,8 @@ export class LoginComponent implements OnInit {
     event.preventDefault()
     console.log(event)
   }
+  checked = false;
+  indeterminate = false;
+  labelPosition = 'after';
+  disabled = false;
 }

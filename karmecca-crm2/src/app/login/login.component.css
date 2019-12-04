@@ -18,3 +18,20 @@ div.login {
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 2em;
 }
+<<<<<<< HEAD
+=======
+.example-h2 {
+    margin: 10px;
+  }
+  
+  .example-section {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    height: 60px;
+  }
+  
+  .example-margin {
+    margin: 0 10px;
+  }
+>>>>>>> 4a62da8879956e2139515891687e31f3cf291f10
