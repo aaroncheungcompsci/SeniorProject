@@ -18,3 +18,17 @@ div.login {
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 2em;
 }
+.example-h2 {
+    margin: 10px;
+  }
+  
+  .example-section {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    height: 60px;
+  }
+  
+  .example-margin {
+    margin: 0 10px;
+  }

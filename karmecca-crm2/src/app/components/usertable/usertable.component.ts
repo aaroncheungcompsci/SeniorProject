@@ -10,7 +10,7 @@ import { map } from 'rxjs/operators';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { DialogData } from '../../DialogData';
 import { ModalComponent } from '../../modal/modal.component';
-import {register} from '../../email-button/email-button.component';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-usertable',
@@ -19,16 +19,32 @@ import {register} from '../../email-button/email-button.component';
 })
 export class UsertableComponent implements OnInit {
   users: User[];
-  dataSource = new UserDataSource(this.userService);
+  private ELEMENT_DATA;
+  public dataSource;
   displayedColumns = ['name', 'email', 'category', 'phone', 'venmo', 'car', 'action'];
   constructor(public dialog: MatDialog, private userService: UserService) { }
 
 
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
 
-// @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
+  @ViewChild(MatSort, {static: true}) sort: MatSort;
+
 ngOnInit() {
   this.userService.getUser()
   .subscribe(data =>this.users = data);
+
+  this.userService.getUser().subscribe(results => {
+    if(!results) return;
+    this.ELEMENT_DATA = results;
+    this.dataSource = new MatTableDataSource(this.ELEMENT_DATA);
+    this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
+  });
+
+
  }
  public sendEmail(){
   register();
@@ -44,6 +60,7 @@ ngOnInit() {
       created_at: this.returnRow(id2).created_at, email:this.returnRow(id2).email, car:this.returnRow(id2).car,
       venmo: this.returnRow(id2).venmo, phone: this.returnRow(id2).phone  }
   });
+  
 }
   /*ngAfterInit(): void {
     this.dataSource.sort = this.sort;
@@ -59,5 +76,3 @@ export class UserDataSource extends DataSource<any> {
   }
   disconnect() {}
 }
-
-

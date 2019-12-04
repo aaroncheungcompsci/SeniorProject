@@ -10,20 +10,21 @@ const request = mailjet
     {
       "From": {
         "Email": "KarmeccaApplicationOfficial@gmail.com",
-        "Name": "Team"
+        "Name": "KARMECCA"
       },
       "To": [
         {
-          "Email": "phuhoangho@csus.edu",
+          "Email": "andrew.hann@yahoo.com",
           "Name": "Team"
         }
       ],
       "Subject": "KARMECCA Car Application Status Update",
-      "HTMLPart": "<h1>***NOTE: DO NOT REPLY TO THIS EMAIL AS EMAILS WILL NOT BE CHECKED***</h1><br /><h3>Dear Applicant, </h3><br />Your application has been accepted!",
+      "HTMLPart": "<h3>Dear Applicant, </h3><br />We are glad to inform you that your application for your car to participate in the upcoming KARMECCA event is now APPROVED. You can check the upcoming event details on the official KARMECCA website at http://karmecca.com/events/.<h4>***NOTE: DO NOT REPLY TO THIS EMAIL AS EMAILS WILL NOT BE CHECKED***</h4>",
       "CustomID": "AppGettingStartedTest"
     }
   ]
 })
+
 const app = express();
 app.use(cors({origin: "*"}));
 app.use(bodyParser.json());
@@ -45,6 +46,7 @@ app.post("/sendmail", function(req,res) {
         res.send(info);
   });
   });
+  
 async function sendMail(user, callback){
   request
     .then((result) => {
@@ -54,3 +56,4 @@ async function sendMail(user, callback){
       console.log(err.statusCode)
     })
 }
+

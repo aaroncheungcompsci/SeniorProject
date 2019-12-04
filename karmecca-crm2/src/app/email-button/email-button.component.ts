@@ -27,9 +27,8 @@ export class EmailButtonComponent implements OnInit {
   ngOnInit() {
     console.log(this.http.test);
   }
-
-
 }
+
 export function register() {
   this.loading = true;
   this.buttionText = "Submiting...";
@@ -38,7 +37,7 @@ export function register() {
   }
   this.http.sendEmail("http://localhost:3000/sendmail", user).subscribe(
     data => {
-      let res:any = data;
+      let res:any = data; 
       console.log(
         `Reached register method`
       );
