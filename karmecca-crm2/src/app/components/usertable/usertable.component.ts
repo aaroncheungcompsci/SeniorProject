@@ -46,6 +46,9 @@ ngOnInit() {
 
 
  }
+ public sendEmail(){
+  register();
+}
  public returnRow(id : string)
  {
    return this.users.find(x => x._id === id);
