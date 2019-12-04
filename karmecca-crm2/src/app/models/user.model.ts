@@ -7,4 +7,5 @@ export interface User {
   venmo:string;
   category: string;
   phone: string;
+  approved: string;
 }

@@ -42,6 +42,7 @@ import { HopbarComponent } from './hopbar/hopbar.component';
 
 import { HeaderComponent } from './header/header.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
+import { AddFormComponent } from './add-form/add-form.component';
 
 
 @NgModule({
@@ -65,7 +66,8 @@ import { AboutusComponent } from './aboutus/aboutus.component';
     ReviewApplicantComponent,
     ModalComponent,
     HopbarComponent,
-    AboutusComponent
+    AboutusComponent,
+    AddFormComponent
 
 
   ],
@@ -144,6 +146,6 @@ import { AboutusComponent } from './aboutus/aboutus.component';
   ],
   providers: [HttpService],
   bootstrap: [AppComponent],
-  entryComponents: [ModalComponent]
+  entryComponents: [ModalComponent, AddFormComponent]
 })
 export class AppModule { }
