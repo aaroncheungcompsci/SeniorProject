@@ -27,12 +27,11 @@ export class EmailButtonComponent implements OnInit {
   ngOnInit() {
     console.log(this.http.test);
   }
-
-  register() {
+  test() {
     this.loading = true;
     this.buttionText = "Submiting...";
     let user = {
-      email: this.emailFormControl.value
+      email: this.emailFormControl
     }
     this.http.sendEmail("http://localhost:3000/sendmail", user).subscribe(
       data => {
@@ -51,4 +50,30 @@ export class EmailButtonComponent implements OnInit {
       }
     );
   }
+}
+
+export function register(uName:string, uEmail: string) {
+  console.log("reached register function");
+  this.loading = true;
+  this.buttionText = "Submiting...";
+  let user = {
+    name: uName,
+    email: uEmail
+  }
+  this.http.sendEmail("http://localhost:3000/sendmail", user).subscribe(
+    data => {
+      let res:any = data; 
+      console.log(
+        `Reached register method`
+      );
+    },
+    err => {
+      console.log(err);
+      this.loading = false;
+      this.buttionText = "Submit";
+    },() => {
+      this.loading = false;
+      this.buttionText = "Submit";
+    }
+  );
 }

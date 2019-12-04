@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MatTableModule, MatToolbarModule, MatCardModule, MatSortModule, MatButtonModule, MatInputModule, MatIconModule } from '@angular/material'
+import { MatTableModule, MatToolbarModule, MatCardModule, MatSortModule, MatButtonModule, MatInputModule, MatIconModule, MatCheckboxModule } from '@angular/material'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -75,6 +75,7 @@ import { AddFormComponent } from './add-form/add-form.component';
     BrowserModule,
     FormsModule,
     MatInputModule,
+    MatCheckboxModule,
     MatButtonModule,
     MatCardModule,
     MatToolbarModule,

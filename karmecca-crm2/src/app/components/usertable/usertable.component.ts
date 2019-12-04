@@ -9,11 +9,10 @@ import { Observable, of as observableOf, merge } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { ModalComponent } from '../../modal/modal.component';
-import { AddFormComponent } from '../../add-form/add-form.component';
 
-const EXAMPLE_DATA: User[] = [
-  {_id: '1', name: 'Harry Smith', category: 'Volunteer', created_at:'Apr 4, 2019',email:'testemail@yahoo.com',phone:'111-1111',car:'Acura RSX',venmo:'TestVenmo', approved: "False" }
-];
+import { AddFormComponent } from '../../add-form/add-form.component';
+import { MatTableDataSource } from '@angular/material/table';
+import {register} from '../../email-button/email-button.component';
 
 @Component({
   selector: 'app-usertable',
@@ -22,27 +21,50 @@ const EXAMPLE_DATA: User[] = [
 })
 export class UsertableComponent implements OnInit {
   users: User[];
+
   usertoAdd: User =
   {
     _id: 'n/a', name: 'n/a', category: 'n/a', created_at:'n/a',email:'n/a',phone:'n/a',car:'n/a',venmo:'n/ao', approved: "n/a" 
   };
   
-
-
   dataSource = new UserDataSource(this.userService);
+
+  private ELEMENT_DATA;
+  public dataSource;
+
   displayedColumns = ['name', 'email', 'category', 'phone', 'venmo', 'car', 'action'];
   constructor(public dialog: MatDialog, private userService: UserService) { }
 
 
-// @ViewChild(MatSort) sort: MatSort;
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
+  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
+  @ViewChild(MatSort, {static: true}) sort: MatSort;
+
 ngOnInit() {
   this.userService.getUser()
   .subscribe(data =>this.users = data);
+
+  this.userService.getUser().subscribe(results => {
+    if(!results) return;
+    this.ELEMENT_DATA = results;
+    this.dataSource = new MatTableDataSource(this.ELEMENT_DATA);
+    this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
+  });
+
+
  }
  public returnRow(id : string)
  {
    return this.users.find(x => x._id === id);
  }
+sendEmail(emailID : string): void{
+  register(this.returnRow(emailID).name, this.returnRow(emailID).email);
+}
+
  openDialog(id2:string): void {
   const dialogRef = this.dialog.open(ModalComponent, {
     width: '500px',
@@ -71,6 +93,8 @@ ngOnInit() {
     this.userService.addUser(this.usertoAdd)
     .subscribe((data : User[]) => this.users = data);
   }
+
+  
   /*ngAfterInit(): void {
     this.dataSource.sort = this.sort;
   }*/
@@ -85,5 +109,3 @@ export class UserDataSource extends DataSource<any> {
   }
   disconnect() {}
 }
-
-
