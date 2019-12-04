@@ -52,3 +52,26 @@ export class EmailButtonComponent implements OnInit {
     );
   }
 }
+export function forgotpw() {
+  this.loading = true;
+  this.buttionText = "Submiting...";
+  let user = {
+    email: this.emailFormControl.value
+  }
+  this.http.sendEmail("http://localhost:3000/getpw", user).subscribe(
+    data => {
+      let res:any = data; 
+      console.log(
+        `Reached forgotpw method`
+      );
+    },
+    err => {
+      console.log(err);
+      this.loading = false;
+      this.buttionText = "Submit";
+    },() => {
+      this.loading = false;
+      this.buttionText = "Submit";
+    }
+  );
+}
