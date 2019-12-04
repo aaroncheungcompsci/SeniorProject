@@ -59,6 +59,15 @@ span.psw {
   padding-top: 16px;
 }
 
+.link{
+  background:none; 
+  border:none;
+  color: black;
+  font-family:Helvetica, Sans-serif;
+  text-align:right;
+  margin:5px 0;
+}
+
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
   span.psw {
@@ -89,14 +98,11 @@ span.psw {
           
       <button routerLink="/home" mat-raised-button type="submit">Login</button>
       <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me
+        <mat-checkbox color = "primary" class="example-margin" [(ngModel)]="checked">Remember me</mat-checkbox>
       </label>
-    </div>
-
-    <div class="container" style="background-color: white">
-      <!-- <button type="button" class="cancelbtn">Cancel</button> -->
-      <button mat-raised-button class="cancelbtn" (click)="register()"> Cancel </button>
-      <span class="psw"><a href="#">Forgot password?</a></span>
+      <br />
+      <button class="link" (click)="reqpw()">Forgot password?</button>
+      <br />
     </div>
   </mat-card>
 </form>
