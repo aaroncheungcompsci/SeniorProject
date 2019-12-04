@@ -12,10 +12,6 @@ import { DialogData } from '../../DialogData';
 import { ModalComponent } from '../../modal/modal.component';
 import { MatTableDataSource } from '@angular/material/table';
 import {register} from '../../email-button/email-button.component';
-<<<<<<< HEAD
-
-=======
->>>>>>> 8703eedec2e455111a08f3cda42fb6f7afca9221
 
 @Component({
   selector: 'app-usertable',
