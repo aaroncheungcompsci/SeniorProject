@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
+import { FormControl, Validators } from "@angular/forms";
+import { HttpService } from "../Shared/http.service";
 
 @Component({
   selector: 'app-login',
@@ -7,17 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  pwFormControl = new FormControl("", [
+    Validators.required,
+  ]);
+
+  unameFormControl = new FormControl("", [
+    Validators.required
+  ]);
+
+  constructor(public http: HttpService) { }
 
   ngOnInit() {
+    console.log(this.http.test);
   }
+
+  // constructor(){}
+  // ngOnInit(){}
 
   loginUser(event) {
     event.preventDefault()
     console.log(event)
   }
-  checked = false;
-  indeterminate = false;
-  labelPosition = 'after';
-  disabled = false;
 }

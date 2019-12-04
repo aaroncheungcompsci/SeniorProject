@@ -107,13 +107,33 @@ span.psw {
     </div>
 
     <div class="container">
-      <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
+      <mat-form-field style = "width:100%">
+        <input matInput placeholder="Enter Username" [formControl]="unameFormControl" />
+        <mat-error *ngIf="unameFormControl.hasError('required')">
+            Username is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <br>
+      <mat-form-field style="width: 100%">
+        <input matInput placeholder="Enter Password" [formControl]="pwFormControl" />
+        <mat-error *ngIf="pwFormControl.hasError('required')">
+            Password is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
 
+      <button
+      routerLink="/home" 
+      mat-raised-button type="submit"
+      [disabled] = "pwFormControl.invalid || unameFormControl.invalid"
+      >Login</button>
+      <!-- <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username">
       <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
-          
-      <button routerLink="/home" mat-raised-button type="submit">Login</button>
+      <input type="password" placeholder="Enter Password">
+      <button
+      routerLink="/home" 
+      mat-raised-button type="submit"
+      >Login</button> -->
     </div>
   </mat-card>
 </form>

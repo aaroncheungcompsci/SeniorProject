@@ -15,7 +15,7 @@ import {UsertableComponent} from './components/usertable/usertable.component';
 import {HttpClientModule} from '@angular/common/http';
 import {UserService} from './services/user.service';
 import { PostCreateComponent } from './posts/post-create/post-create.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { ViewAppsComponent } from './view-apps/view-apps.component';
 import { EmailButtonComponent } from './email-button/email-button.component';
@@ -83,6 +83,7 @@ import { AddFormComponent } from './add-form/add-form.component';
     MatToolbarModule,
     AppRoutingModule,
     MatIconModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
       {
         path: 'login',
