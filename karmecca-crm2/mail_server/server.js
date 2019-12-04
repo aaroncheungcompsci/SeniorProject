@@ -25,29 +25,6 @@ const request = mailjet
   ]
 })
 
-const pwemail = mailjet
-.connect('7fad7c15e4f36bdccf29c634314d1d58', 'd071b908d4ad2fe9e80a2b9572aafbf8')
-.post("send", {'version': 'v3.1'})
-.request({
-  "Messages":[
-    {
-      "From": {
-        "Email": "KarmeccaApplicationOfficial@gmail.com",
-        "Name": "Team"
-      },
-      "To": [
-        {
-          "Email": "andrew.hann@yahoo.com",
-          "Name": "Team"
-        }
-      ],
-      "Subject": "Forgot password request",
-      "HTMLPart": "This is your password",
-      "CustomID": "AppGettingStartedTest"
-    }
-  ]
-})
-
 const app = express();
 app.use(cors({origin: "*"}));
 app.use(bodyParser.json());
@@ -69,15 +46,6 @@ app.post("/sendmail", function(req,res) {
         res.send(info);
   });
   });
-
-app.post("/getpw", function(req,res) {
-  console.log("Email request receieved");
-    let user = req.body;
-    getpw(user, info => {
-        console.log(`Email sent.`);
-        res.send(info);
-  });
-  });
   
 async function sendMail(user, callback){
   request
@@ -89,12 +57,3 @@ async function sendMail(user, callback){
     })
 }
 
-async function getpw(user, callback){
-  request
-    .then((result) => {
-      console.log(result.body)
-    })
-    .catch((err) => {
-      console.log(err.statusCode)
-    })
-}

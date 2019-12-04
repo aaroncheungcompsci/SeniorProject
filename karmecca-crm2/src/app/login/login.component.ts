@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {forgotpw} from '../email-button/email-button.component'
 
 @Component({
   selector: 'app-login',
@@ -21,8 +20,4 @@ export class LoginComponent implements OnInit {
   indeterminate = false;
   labelPosition = 'after';
   disabled = false;
-
-  reqpw(){
-    forgotpw();
-  }
 }
