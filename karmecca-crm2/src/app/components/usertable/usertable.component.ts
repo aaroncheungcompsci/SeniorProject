@@ -60,9 +60,10 @@ ngOnInit() {
  {
    return this.users.find(x => x._id === id);
  }
-sendEmail(emailID : string): void{
-  register(this.returnRow(emailID).name, this.returnRow(emailID).email);
-}
+  sendEmail(emailID : string): void{
+    console.log("Button has been clicked.");
+    register(this.returnRow(emailID).name, this.returnRow(emailID).email);
+  }
 
  openDialog(id2:string): void {
   const dialogRef = this.dialog.open(ModalComponent, {
