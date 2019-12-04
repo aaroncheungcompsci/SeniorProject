@@ -8,7 +8,7 @@ import { FormControl, Validators } from "@angular/forms";
   templateUrl: './email-button-test.component.html',
   styleUrls: ['./email-button-test.component.css']
 })
-export class EmailButtonComponent implements OnInit {
+export class EmailButtonTestComponent implements OnInit {
 
   // constructor() { }
 
