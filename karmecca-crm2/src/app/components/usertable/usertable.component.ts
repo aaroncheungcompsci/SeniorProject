@@ -12,7 +12,10 @@ import { DialogData } from '../../DialogData';
 import { ModalComponent } from '../../modal/modal.component';
 import { MatTableDataSource } from '@angular/material/table';
 import {register} from '../../email-button/email-button.component';
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8703eedec2e455111a08f3cda42fb6f7afca9221
 
 @Component({
   selector: 'app-usertable',
@@ -48,13 +51,14 @@ ngOnInit() {
 
 
  }
- public sendEmail(){
-  register();
-}
  public returnRow(id : string)
  {
    return this.users.find(x => x._id === id);
  }
+sendEmail(emailID : string): void{
+  register(this.returnRow(emailID).name, this.returnRow(emailID).email);
+}
+
  openDialog(id2:string): void {
   const dialogRef = this.dialog.open(ModalComponent, {
     width: '500px',
