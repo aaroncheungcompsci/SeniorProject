@@ -7,11 +7,8 @@ import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
 import { HomeComponent } from './home/home.component';
 import { RouterModule } from '@angular/router';
-<<<<<<< HEAD
 import { RegisterComponent } from './register/register.component';
-=======
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
->>>>>>> f9d9ac44da79c5949e6ec3a589f9b48782144677
 
 @NgModule({
   declarations: [
