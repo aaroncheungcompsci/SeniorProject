@@ -10,6 +10,7 @@ import { map } from 'rxjs/operators';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { DialogData } from '../../DialogData';
 import { ModalComponent } from '../../modal/modal.component';
+import {register} from '../../email-button/email-button.component';
 
 @Component({
   selector: 'app-usertable',
@@ -23,11 +24,15 @@ export class UsertableComponent implements OnInit {
   constructor(public dialog: MatDialog, private userService: UserService) { }
 
 
+
 // @ViewChild(MatSort) sort: MatSort;
 ngOnInit() {
   this.userService.getUser()
   .subscribe(data =>this.users = data);
  }
+ public sendEmail(){
+  register();
+}
  public returnRow(id : string)
  {
    return this.users.find(x => x._id === id);
