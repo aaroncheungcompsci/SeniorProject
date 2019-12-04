@@ -19,6 +19,7 @@ import {FormsModule} from '@angular/forms';
 
 import { ViewAppsComponent } from './view-apps/view-apps.component';
 import { EmailButtonComponent } from './email-button/email-button.component';
+import { EmailTestComponent } from './email-button-test/email-button-test.component';
 import { RegisterComponent } from './register/register.component';
 import { HttpService } from './Shared/http.service';
 
@@ -63,6 +64,7 @@ import { AddFormComponent } from './add-form/add-form.component';
 
     ViewAppsComponent,
     EmailButtonComponent,
+    EmailTestComponent,
     ReviewApplicantComponent,
     ModalComponent,
     HopbarComponent,
