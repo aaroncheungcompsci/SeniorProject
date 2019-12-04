@@ -27,7 +27,6 @@ export class UsertableComponent implements OnInit {
     _id: 'n/a', name: 'n/a', category: 'n/a', created_at:'n/a',email:'n/a',phone:'n/a',car:'n/a',venmo:'n/ao', approved: "n/a" 
   };
   
-  dataSource = new UserDataSource(this.userService);
 
   private ELEMENT_DATA;
   public dataSource;
