@@ -19,7 +19,10 @@ export class UserService {
   getUser(): Observable<User[]> {
     return this.http.get<User[]>(this.serviceUrl);
   }
-  
+  addUser(user: User) {
+    console.log(user);
+    return this.http.post(this.serviceUrl, user);
+  }
   
 }
 

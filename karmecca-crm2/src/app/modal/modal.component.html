@@ -8,10 +8,11 @@
   Car: {{data.car}}<br/>
   Venmo: {{data.venmo}}<br/>
   Phone: {{data.phone}}<br/>
+  Approved: {{data.approved}}<br/>
 </p>
 
 <div mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">Accept</button>
+  <button mat-button (click)="onApprove()">Accept</button>
   <button mat-button (click)="onNoClick()">Reject</button>
   <button mat-button><mat-icon>edit</mat-icon></button>
 </div>

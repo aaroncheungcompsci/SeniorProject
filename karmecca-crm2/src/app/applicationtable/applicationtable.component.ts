@@ -7,7 +7,7 @@ import { ApplicationtableDataSource, ApplicationtableItem } from './applicationt
 import { MatCard } from '@angular/material';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { ModalComponent } from '../modal/modal.component';
-import { DialogData } from '../DialogData';
+//import { DialogData } from '../DialogData';
 
 
 @Component({

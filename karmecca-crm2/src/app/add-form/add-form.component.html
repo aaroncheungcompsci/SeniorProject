@@ -1,0 +1,41 @@
+<h1 mat-dialog-title>Add User:</h1>
+<div mat-dialog-content>
+  <p>Name</p>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.user.name">
+  </mat-form-field>
+  <p>Email</p>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.user.email">
+  </mat-form-field>
+  <p>Car</p>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.user.car">
+  </mat-form-field>
+  <p>Venmo</p>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.user.venmo">
+  </mat-form-field>
+  <p>Category</p>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.user.category">
+  </mat-form-field>
+  <p>Phone</p>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.user.phone">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Confirm</button>
+</div>
+
+_id: string;
+created_at: string;
+name: string;
+email: string;
+car: string;
+venmo:string;
+category: string;
+phone: string;
+approved: string;
