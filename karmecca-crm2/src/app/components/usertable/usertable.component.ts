@@ -11,6 +11,8 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { DialogData } from '../../DialogData';
 import { ModalComponent } from '../../modal/modal.component';
 import { MatTableDataSource } from '@angular/material/table';
+import {register} from '../../email-button/email-button.component';
+
 
 @Component({
   selector: 'app-usertable',
@@ -60,7 +62,7 @@ ngOnInit() {
       created_at: this.returnRow(id2).created_at, email:this.returnRow(id2).email, car:this.returnRow(id2).car,
       venmo: this.returnRow(id2).venmo, phone: this.returnRow(id2).phone  }
   });
-  
+
 }
   /*ngAfterInit(): void {
     this.dataSource.sort = this.sort;
