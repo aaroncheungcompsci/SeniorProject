@@ -34,7 +34,7 @@
       <mat-header-cell *matHeaderCellDef mat-sort-header> Actions </mat-header-cell>
       <mat-cell *matCellDef="let user">
         <button mat-button (click)="openDialog(user._id)"><mat-icon>reorder</mat-icon></button>
-        <button mat-button (click) = "sendEmail()">Button Name </button>
+        <button mat-button (click)="sendEmail(user._id)"><mat-icon>mail_outline</mat-icon></button>
       </mat-cell>
     </ng-container>
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
