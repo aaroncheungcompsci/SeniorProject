@@ -3,6 +3,20 @@
     margin-right: 8px;
 }
 
+.button-row {
+    background-color:#072e53;
+    color: white;
+}
+
+a {
+    background-color:white;
+    opacity: 1;
+}
+
+a:hover {
+    opacity:0.8;
+}
+
 .title {
     margin-right: 16px;
     font-size: 1.5em;

@@ -12,7 +12,7 @@ import { ModalComponent } from '../../modal/modal.component';
 
 import { AddFormComponent } from '../../add-form/add-form.component';
 import { MatTableDataSource } from '@angular/material/table';
-import {register} from '../../email-button/email-button.component';
+import { HttpService } from "../../Shared/http.service";
 
 @Component({
   selector: 'app-usertable',
@@ -21,6 +21,9 @@ import {register} from '../../email-button/email-button.component';
 })
 export class UsertableComponent implements OnInit {
   users: User[];
+
+  loading = false;
+  buttionText = "Submit";
 
   usertoAdd: User =
   {
@@ -32,7 +35,7 @@ export class UsertableComponent implements OnInit {
   public dataSource;
 
   displayedColumns = ['name', 'email', 'category', 'phone', 'venmo', 'car', 'action'];
-  constructor(public dialog: MatDialog, private userService: UserService) { }
+  constructor(public dialog: MatDialog, private userService: UserService, public http: HttpService) { }
 
 
   applyFilter(filterValue: string) {
@@ -45,6 +48,8 @@ export class UsertableComponent implements OnInit {
 ngOnInit() {
   this.userService.getUser()
   .subscribe(data =>this.users = data);
+
+  console.log(this.http.test);
 
   this.userService.getUser().subscribe(results => {
     if(!results) return;
@@ -60,9 +65,35 @@ ngOnInit() {
  {
    return this.users.find(x => x._id === id);
  }
-sendEmail(emailID : string): void{
-  register(this.returnRow(emailID).name, this.returnRow(emailID).email);
-}
+  sendEmail(emailID : string): void{
+    console.log("Button has been clicked.");
+    this.email(this.returnRow(emailID).name, this.returnRow(emailID).email);
+  }
+
+  email(uName:String, uEmail:string) {
+    this.loading = true;
+    this.buttionText = "Submiting...";
+    let user = {
+      name: uName,
+      email: uEmail
+    }
+    this.http.sendEmail("http://localhost:3000/sendmail", user).subscribe(
+      data => {
+        let res:any = data; 
+        console.log(
+          `Reached register method`
+        );
+      },
+      err => {
+        console.log(err);
+        this.loading = false;
+        this.buttionText = "Submit";
+      },() => {
+        this.loading = false;
+        this.buttionText = "Submit";
+      }
+    );
+  }
 
  openDialog(id2:string): void {
   const dialogRef = this.dialog.open(ModalComponent, {

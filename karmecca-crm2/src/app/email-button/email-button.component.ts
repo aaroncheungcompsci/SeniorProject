@@ -2,6 +2,7 @@
 import { Component, OnInit, OnChanges } from "@angular/core";
 import { HttpService } from "../Shared/http.service";
 import { FormControl, Validators } from "@angular/forms";
+import { TestBed } from '@angular/core/testing';
 
 @Component({
   selector: 'app-email-button',
@@ -27,7 +28,7 @@ export class EmailButtonComponent implements OnInit {
   ngOnInit() {
     console.log(this.http.test);
   }
-  test() {
+  email() {
     this.loading = true;
     this.buttionText = "Submiting...";
     let user = {
@@ -77,3 +78,28 @@ export function register(uName:string, uEmail: string) {
     }
   );
 }
+
+// export function xtest() {
+//   console.log("reached register function");
+//   this.loading = true;
+//   this.buttionText = "Submiting...";
+//   let user = {
+//     email: this.emailFormControl
+//   }
+//   this.http.sendEmail("http://localhost:3000/sendmail", user).subscribe(
+//     data => {
+//       let res:any = data; 
+//       console.log(
+//         `Reached register method`
+//       );
+//     },
+//     err => {
+//       console.log(err);
+//       this.loading = false;
+//       this.buttionText = "Submit";
+//     },() => {
+//       this.loading = false;
+//       this.buttionText = "Submit";
+//     }
+//   );
+// }

@@ -60,7 +60,7 @@ async function sendMail(user, callback){
         },
         "To": [
           {
-            "Email": "andrew.hann@yahoo.com",
+            "Email": user.email,
             "Name": user.name
           }
         ],
