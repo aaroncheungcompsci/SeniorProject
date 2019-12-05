@@ -30,4 +30,6 @@ export class LoginComponent implements OnInit {
     event.preventDefault()
     console.log(event)
   }
+
+  hide = true;
 }
