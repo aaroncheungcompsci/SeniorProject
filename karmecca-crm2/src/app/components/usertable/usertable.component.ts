@@ -27,9 +27,9 @@ export class UsertableComponent implements OnInit {
 
   usertoAdd: User =
   {
-    _id: 'n/a', name: 'n/a', category: 'n/a', created_at:'n/a',email:'n/a',phone:'n/a',car:'n/a',venmo:'n/ao', approved: "n/a" 
+    _id: 'n/a', name: 'n/a', category: 'n/a', created_at:'n/a',email:'n/a',phone:'n/a',car:'n/a',venmo:'n/ao', approved: "n/a"
   };
-  
+
 
   private ELEMENT_DATA;
   public dataSource;
@@ -79,7 +79,7 @@ ngOnInit() {
     }
     this.http.sendEmail("http://localhost:3000/sendmail", user).subscribe(
       data => {
-        let res:any = data; 
+        let res:any = data;
         console.log(
           `Reached register method`
         );
@@ -100,12 +100,6 @@ ngOnInit() {
     width: '500px',
     data: {_id:this.returnRow(id2)._id, name: this.returnRow(id2).name, category: this.returnRow(id2).category,
       created_at: this.returnRow(id2).created_at, email:this.returnRow(id2).email, car:this.returnRow(id2).car,
-<<<<<<< HEAD
-      venmo: this.returnRow(id2).venmo, phone: this.returnRow(id2).phone  }
-  });
-
-}
-=======
       venmo: this.returnRow(id2).venmo, phone: this.returnRow(id2).phone, approved: this.returnRow(id2).approved  }
     });
   }
@@ -115,13 +109,13 @@ ngOnInit() {
       data: {user: this.usertoAdd}
     });
 
-    dialogRef.afterClosed().subscribe(result => 
+    dialogRef.afterClosed().subscribe(result =>
     {
       //console.log(result.user);
       //console.log(this.usertoAdd);
       this.usertoAdd = result.user;
       this.addUser(this.usertoAdd);
-      
+
     })
   }
   addUser(userAdding : User)
@@ -130,8 +124,7 @@ ngOnInit() {
     .subscribe((data : User[]) => this.users = data);
   }
 
-  
->>>>>>> c629e5e96e57ab0298335388b3db8ba9b95f9e07
+
   /*ngAfterInit(): void {
     this.dataSource.sort = this.sort;
   }*/
