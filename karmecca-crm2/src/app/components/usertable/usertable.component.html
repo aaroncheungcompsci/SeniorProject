@@ -63,6 +63,10 @@
             <mat-header-cell *matHeaderCellDef mat-sort-header> Status </mat-header-cell>
             <mat-cell *matCellDef="let user"> {{user.approved}} </mat-cell>
           </ng-container>
+          <ng-container matColumnDef="created_at">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Date </mat-header-cell>
+              <mat-cell *matCellDef="let user"> {{user.created_at}} </mat-cell>
+            </ng-container>
           <ng-container matColumnDef="action">
             <mat-header-cell *matHeaderCellDef mat-sort-header> Actions </mat-header-cell>
             <mat-cell *matCellDef="let user">
