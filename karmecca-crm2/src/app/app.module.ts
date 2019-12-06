@@ -44,6 +44,7 @@ import { HopbarComponent } from './hopbar/hopbar.component';
 import { HeaderComponent } from './header/header.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { AddFormComponent } from './add-form/add-form.component';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 
 @NgModule({
@@ -81,6 +82,7 @@ import { AddFormComponent } from './add-form/add-form.component';
     MatButtonModule,
     MatCardModule,
     MatToolbarModule,
+    MatButtonToggleModule,
     AppRoutingModule,
     MatIconModule,
     ReactiveFormsModule,
