@@ -51,6 +51,7 @@ ngOnInit() {
 
   console.log(this.http.test);
 
+
   this.userService.getUser().subscribe(results => {
     if(!results) return;
     this.ELEMENT_DATA = results;
@@ -123,7 +124,11 @@ ngOnInit() {
     this.userService.addUser(this.usertoAdd)
     .subscribe((data : User[]) => this.users = data);
   }
-
+  //Delete User
+  deleteUser(idToDelete: String)
+  {
+    this.userService.deleteUser(idToDelete).subscribe();
+  }
 
   /*ngAfterInit(): void {
     this.dataSource.sort = this.sort;

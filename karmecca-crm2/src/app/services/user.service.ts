@@ -23,6 +23,11 @@ export class UserService {
     console.log(user);
     return this.http.post(this.serviceUrl, user);
   }
+  deleteUser(id: String)
+  {
+    const url = `${this.serviceUrl}/${id}`; // DELETE api/heroes/42
+    return this.http.delete(url)
+  }
   
 }
 
