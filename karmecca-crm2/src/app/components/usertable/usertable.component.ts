@@ -27,7 +27,7 @@ export class UsertableComponent implements OnInit {
 
   usertoAdd: User =
   {
-    _id: 'n/a', name: 'n/a', category: 'n/a', created_at:'n/a',email:'n/a',phone:'n/a',car:'n/a',venmo:'n/ao', approved: "n/a"
+    _id: '', name: '', category: '', created_at:'',email:'',phone:'',car:'',venmo:'', approved: ''
   };
 
 

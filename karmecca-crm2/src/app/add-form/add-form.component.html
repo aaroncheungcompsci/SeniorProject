@@ -1,28 +1,27 @@
 <h1 mat-dialog-title>Add User:</h1>
 <div mat-dialog-content>
-  <p>Name</p>
   <mat-form-field>
-    <input matInput [(ngModel)]="data.user.name">
+    <input placeholder="Name" matInput [(ngModel)]="data.user.name">
   </mat-form-field>
-  <p>Email</p>
+  <br>
   <mat-form-field>
-    <input matInput [(ngModel)]="data.user.email">
+    <input placeholder="Email address" matInput [(ngModel)]="data.user.email">
   </mat-form-field>
-  <p>Car</p>
+  <br>
   <mat-form-field>
-    <input matInput [(ngModel)]="data.user.car">
+    <input placeholder="Car" matInput [(ngModel)]="data.user.car">
   </mat-form-field>
-  <p>Venmo</p>
+  <br>
   <mat-form-field>
-    <input matInput [(ngModel)]="data.user.venmo">
+    <input placeholder="Venmo username" matInput [(ngModel)]="data.user.venmo">
   </mat-form-field>
-  <p>Category</p>
+  <br>
   <mat-form-field>
-    <input matInput [(ngModel)]="data.user.category">
+    <input placeholder="Car/Vendor/Volunteer" matInput [(ngModel)]="data.user.category">
   </mat-form-field>
-  <p>Phone</p>
+  <br>
   <mat-form-field>
-    <input matInput [(ngModel)]="data.user.phone">
+    <input placeholder="Phone Number" matInput [(ngModel)]="data.user.phone">
   </mat-form-field>
 </div>
 <div mat-dialog-actions>
