@@ -63,18 +63,22 @@
             <mat-header-cell *matHeaderCellDef mat-sort-header> Status </mat-header-cell>
             <mat-cell *matCellDef="let user"> {{user.approved}} </mat-cell>
           </ng-container>
+          <ng-container matColumnDef="created_at">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Date </mat-header-cell>
+              <mat-cell *matCellDef="let user"> {{user.created_at}} </mat-cell>
+            </ng-container>
           <ng-container matColumnDef="action">
             <mat-header-cell *matHeaderCellDef mat-sort-header> Actions </mat-header-cell>
             <mat-cell *matCellDef="let user">
               <button mat-button (click)="openDialog(user._id)"><mat-icon>reorder</mat-icon></button>
               <button mat-button (click)="sendEmail(user._id)"><mat-icon>mail_outline</mat-icon></button>
-              <button mat-button ><mat-icon>delete_forever</mat-icon></button>
+              <button mat-button (click)="deleteUser(user._id)"><mat-icon>delete_forever</mat-icon></button>
             </mat-cell>
           </ng-container>
           <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
           <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
         </table>
-        <mat-paginator [pageSize]="10" [pageSizeOptions]="[10, 15, 20, 25, 30]">
+        <mat-paginator [pageSize]="10" [pageSizeOptions]="[10, 15, 20]">
         </mat-paginator>
       </mat-card>
     </form>

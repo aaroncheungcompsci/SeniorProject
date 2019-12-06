@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.803.19",
-    "@angular/cli": "~8.3.7",
+    "@angular/cli": "^8.3.20",
     "@angular/compiler-cli": "~8.2.9",
     "@angular/language-service": "~8.2.9",
     "@types/hammerjs": "^2.0.36",
@@ -43,6 +43,7 @@
     "codelyzer": "^5.0.0",
     "jasmine": "^3.5.0",
     "jasmine-core": "~3.4.0",
+    "jasmine-node": "^1.14.5",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.1.0",
     "karma-chrome-launcher": "~2.2.0",
@@ -52,7 +53,6 @@
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
-    "typescript": "~3.5.3",
-    "jasmine-node": "^1.14.5"
+    "typescript": "~3.5.3"
   }
 }
