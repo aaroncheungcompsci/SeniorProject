@@ -14,7 +14,7 @@
 <html>
 <head></head>
 <style>
-.bg{
+body{
     /* The image used */
     background-image: url("/assets/DSC04059.jpg");
 
@@ -28,10 +28,32 @@
 }
 </style>
 <body>
-  <div class="bg"></div> 
+  <!-- <div class="bg"></div>  -->
     <!-- <img src="/assets/DSC02310.jpg" alt="Flowers in Chania" style="width:1400px;height:900px;"> -->
-
-  </body>
+    <br>
+    <br>
+    <form style="width: 50%; margin: auto">
+      <mat-card>
+        <div class="container">
+          <h2>Current Application Status</h2>
+          <p><strong>Applications Approved:</strong></p>
+          <div class="light-grey round-xlarge">
+            <div class="container green round-xlarge" style="width:50%">50/100</div>
+          </div>
+          <br>
+          <p><strong>Applications Pending:</strong></p>
+          <div class="light-grey round-xlarge">
+            <div class="container orange round-xlarge" style="width:40%">40/100</div>
+          </div>
+          <br>
+          <p><strong>Applications Rejected:</strong></p>
+          <div class="light-grey round-xlarge">
+            <div class="container red round-xlarge" style="width:10%">10/100</div>
+          </div>
+        </div>
+      </mat-card>
+    </form>
+</body>
 </html>
 <!-- <p>Home works!</p> -->
 
