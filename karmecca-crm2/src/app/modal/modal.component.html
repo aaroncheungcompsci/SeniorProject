@@ -1,54 +1,20 @@
 <h1 mat-dialog-title>Account Information</h1>
-<!-- <p >
-  ID: {{data._id}}<br/>
-  Name: {{data.name}}<br/>
-  Category: {{data.category}}<br/>
-  Date: {{data.created_at}}<br/>
-  Email: {{data.email}}<br/>
-  Car: {{data.car}}<br/>
-  Venmo: {{data.venmo}}<br/>
-  Phone: {{data.phone}}<br/>
-  Approved: {{data.approved}}<br/>
-</p> -->
-
-<table style="width:100%">
-    <tr>
-      <td>ID: </td>
-      <td>{{data._id}}</td>
-    </tr>
-    <tr>
-      <td>Name: </td>
-      <td>{{data.name}}</td>
-    </tr>
-    <tr>
-      <td>Category: </td>
-      <td>{{data.category}}</td>
-    </tr>
-    <tr>
-      <td>Date: </td>
-      <td>{{data.created_at}}</td>
-    </tr>
-    <tr>
-      <td>Email: </td>
-      <td>{{data.email}}</td>
-    </tr>
-    <tr>
-      <td>Car: </td>
-      <td>{{data.car}}</td>
-    </tr>  <tr>
-      <td>Venmo: </td>
-      <td>{{data.venmo}}</td>
-    </tr>  <tr>
-      <td>Phone: </td>
-      <td>{{data.phone}}</td>
-    </tr>
-</table>
-
+<p >
+  <strong>ID:</strong> <td>{{data._id}}</td><br/>
+  <strong>Name:</strong> <td>{{data.name}}</td><br/>
+  <strong>Category:</strong> <td>{{data.category}}</td><br/>
+  <strong>Date Created:</strong> <td>{{data.created_at}}</td><br/>
+  <strong>Email:</strong> <td>{{data.email}}</td><br/>
+  <strong>Car:</strong> <td>{{data.car}}</td><br/>
+  <strong>Venmo:</strong> <td>{{data.venmo}}</td><br/>
+  <strong>Phone:</strong> <td>{{data.phone}}</td><br/>
+  <strong>Status:</strong> <td>{{data.approved}}</td><br/>
+</p>
 
 <div mat-dialog-actions>
-  <button mat-button color="primary" (click)="onApprove()">Accept</button>
-  <button mat-button color="warn" (click)="onNoClick()">Reject</button>
-
+  <button mat-button (click)="onApprove()">Accept</button>
+  <button mat-button (click)="onNoClick()">Reject</button>
   <button mat-button><mat-icon>edit</mat-icon></button>
 </div>
+
 
