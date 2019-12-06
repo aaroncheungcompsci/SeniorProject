@@ -12,7 +12,7 @@ var customerSchema = new mongoose.Schema({
     category: String,
     phone: String,
     venmo: String,
-    car: String,
+    car: {type: String, default: "Pending"},
 
     approved: String,
     created_at: {type: Date, default: Date.now}
