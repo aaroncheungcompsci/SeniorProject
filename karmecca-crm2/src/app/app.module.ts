@@ -19,7 +19,6 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ViewAppsComponent } from './view-apps/view-apps.component';
 import { EmailButtonComponent } from './email-button/email-button.component';
 import { EmailTestComponent } from './email-button-test/email-button-test.component';
-import { RegisterComponent } from './register/register.component';
 import { HttpService } from './Shared/http.service';
 
 
@@ -32,7 +31,6 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 
 import { ApplicationtableComponent } from './applicationtable/applicationtable.component';
 // import { HeaderComponent } from './header/header.component';
-import { RegisterconfirmComponent } from './registerconfirm/registerconfirm.component';
 
 import { MaterialModule } from '../material.module';
 import { ModalComponent } from './modal/modal.component';
@@ -54,12 +52,7 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
     LoginComponent,
     UsertableComponent,
     HomeComponent,
-
-    RegisterComponent,
     ApplicationtableComponent,
-    RegisterconfirmComponent,
-
-
 
     ViewAppsComponent,
     EmailButtonComponent,
@@ -90,20 +83,12 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
         component: LoginComponent
       },
       {
-        path: 'register',
-        component: RegisterComponent
-      },
-      {
         path: 'applicationtable',
         component: ApplicationtableComponent
       },
       {
         path: 'usertable',
         component: UsertableComponent
-      },
-      {
-        path: 'registerconfirm',
-        component: RegisterconfirmComponent
       },
       {
         path: 'home',
