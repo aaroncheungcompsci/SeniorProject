@@ -120,7 +120,7 @@ import { AddFormComponent } from './add-form/add-form.component';
       {
         // ANY NEW COMPONENTS NEED TO BE PLACED BEFORE THIS ONE
         path: '',
-        component: HomeComponent
+        component: LoginComponent
       },
       {
         path: 'viewApps',
