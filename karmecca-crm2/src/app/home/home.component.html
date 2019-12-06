@@ -26,6 +26,9 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
 }
+div {
+  font-family:"Segoe UI",Arial,sans-serif;font-weight:400;margin:10px 0;
+}
 </style>
 <body>
   <!-- <div class="bg"></div>  -->
@@ -35,20 +38,24 @@ body{
     <form style="width: 50%; margin: auto">
       <mat-card>
         <div class="container">
-          <h2>Current Application Status</h2>
-          <p><strong>Applications Approved:</strong></p>
+          <h2><strong>Current Application Status</strong></h2>
+          <h6><strong>Applications Approved:</strong></h6>
           <div class="light-grey round-xlarge">
-            <div class="container green round-xlarge" style="width:50%">50/100</div>
+            <div class="container green round-xlarge" style="width:50%"><strong>50%</strong></div>
           </div>
           <br>
-          <p><strong>Applications Pending:</strong></p>
+          <br>
+          <br>
+          <h6><strong>Applications Pending:</strong></h6>
           <div class="light-grey round-xlarge">
-            <div class="container orange round-xlarge" style="width:40%">40/100</div>
+            <div class="container orange round-xlarge" style="width:50%"><strong>40%</strong></div>
           </div>
           <br>
-          <p><strong>Applications Rejected:</strong></p>
+          <br>
+          <br>
+          <h6><strong>Applications Rejected:</strong></h6>
           <div class="light-grey round-xlarge">
-            <div class="container red round-xlarge" style="width:10%">10/100</div>
+            <div class="container red round-xlarge" style="width:10%"><strong>10%</strong></div>
           </div>
         </div>
       </mat-card>
