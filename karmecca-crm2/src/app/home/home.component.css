@@ -158,7 +158,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .indigo,.hover-indigo:hover{color:#fff!important;background-color:#3f51b5!important}
 .khaki,.hover-khaki:hover{color:#000!important;background-color:#f0e68c!important}
 .lime,.hover-lime:hover{color:#000!important;background-color:#cddc39!important}
-.orange,.hover-orange:hover{color:#000!important;background-color:#ff9800!important}
+.orange,.hover-orange:hover{color:#fff!important;background-color:#ff9800!important}
 .deep-orange,.hover-deep-orange:hover{color:#fff!important;background-color:#ff5722!important}
 .pink,.hover-pink:hover{color:#fff!important;background-color:#e91e63!important}
 .purple,.hover-purple:hover{color:#fff!important;background-color:#9c27b0!important}
