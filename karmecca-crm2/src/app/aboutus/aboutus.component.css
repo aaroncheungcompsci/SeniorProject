@@ -1,5 +1,7 @@
 div.about {
     text-align: center;
+    color:black;
+
     background-image: url("/assets/DSC04059.jpg");
 
     /* Full height */
