@@ -26,7 +26,19 @@ export class UserService {
   deleteUser(id: String)
   {
     const url = `${this.serviceUrl}/${id}`; // DELETE api/heroes/42
-    return this.http.delete(url)
+    return this.http.delete(url);
+  }
+  rejectUser(user: User) 
+  {
+    user.approved = "Rejected";
+    const url = `${this.serviceUrl}/${user._id}`;
+    return this.http.put(url, user) 
+  }
+  approveUser(user: User) 
+  {
+    user.approved = "Approved";
+    const url = `${this.serviceUrl}/${user._id}`;
+    return this.http.put(url, user) 
   }
   
 }
