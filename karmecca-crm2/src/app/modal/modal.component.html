@@ -42,12 +42,13 @@
       <td>Phone: </td>
       <td>{{data.phone}}</td>
     </tr>
-</table> 
-  
+</table>
+
 
 <div mat-dialog-actions>
-  <button mat-button (click)="onApprove()">Accept</button>
-  <button mat-button (click)="onNoClick()">Reject</button>
+  <button mat-button color="primary" (click)="onApprove()">Accept</button>
+  <button mat-button color="warn" (click)="onNoClick()">Reject</button>
+
   <button mat-button><mat-icon>edit</mat-icon></button>
 </div>
 

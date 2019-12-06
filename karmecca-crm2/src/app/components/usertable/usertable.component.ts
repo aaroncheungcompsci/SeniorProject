@@ -34,7 +34,7 @@ export class UsertableComponent implements OnInit {
   private ELEMENT_DATA;
   public dataSource;
 
-  displayedColumns = ['name', 'email', 'category', 'phone', 'venmo', 'car', 'action'];
+  displayedColumns = ['name', 'email', 'category', 'phone', 'venmo', 'car', 'status','action'];
   constructor(public dialog: MatDialog, private userService: UserService, public http: HttpService) { }
 
 

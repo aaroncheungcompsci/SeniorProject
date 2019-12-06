@@ -13,6 +13,7 @@ var customerSchema = new mongoose.Schema({
     phone: String,
     venmo: String,
     car: String,
+    status: String,
     approved: String,
     created_at: {type: Date, default: Date.now}
 })
