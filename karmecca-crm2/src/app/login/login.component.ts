@@ -9,10 +9,11 @@ import { HttpService } from "../Shared/http.service";
 })
 export class LoginComponent implements OnInit {
 
+  //pw variable
   pwFormControl = new FormControl("", [
     Validators.required,
   ]);
-
+  //username variable
   unameFormControl = new FormControl("", [
     Validators.required
   ]);
