@@ -9,6 +9,7 @@ import { Observable, of as observableOf, merge } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { ModalComponent } from '../../modal/modal.component';
+import { AngularCsv } from 'angular7-csv/dist/Angular-csv';
 
 import { AddFormComponent } from '../../add-form/add-form.component';
 import { MatTableDataSource } from '@angular/material/table';
@@ -36,6 +37,18 @@ export class UsertableComponent implements OnInit {
 
   displayedColumns = ['name', 'email', 'category', 'approved', 'created_at', 'action'];
   constructor(public dialog: MatDialog, private userService: UserService, public http: HttpService) { }
+
+  csvOptions = {
+    fieldSeparator: ',',
+    quoteStrings: '"',
+    decimalseparator: '.',
+    showLabels: true,
+    showTitle: true,
+    title: 'Karmecca Applicant List',
+    useBom: true,
+    noDownload: false,
+    headers: ["Car", "ID", "Created At", "Name", "Email", "Category", "Phone", "Venmo", "Status"]
+  };
 
 
   applyFilter(filterValue: string) {
@@ -128,6 +141,11 @@ ngOnInit() {
   deleteUser(idToDelete: String)
   {
     this.userService.deleteUser(idToDelete).subscribe();
+  }
+
+  downloadCSV(){
+    console.log("button pressed");
+    new AngularCsv(this.users, "KarmeccaApplicantList", this.csvOptions);
   }
 
   /*ngAfterInit(): void {
