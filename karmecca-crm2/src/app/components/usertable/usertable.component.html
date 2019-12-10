@@ -30,6 +30,7 @@
     <form style="width: 90%; margin: auto">
       <mat-card>
         <button class="add" mat-button (click)="openForm()"><mat-icon>queue</mat-icon>Add User</button>
+        <button class="add" mat-button (click)="downloadCSV()"><mat-icon>queue</mat-icon>Export to CSV</button>
         <!-- Filter Input Form -->
         <mat-form-field class="filterbg">
             <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
