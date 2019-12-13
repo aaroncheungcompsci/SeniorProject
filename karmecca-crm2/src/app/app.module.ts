@@ -114,6 +114,10 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
       {
         path: 'header',
         component: HeaderComponent
+      },
+      {
+        path: 'email-button-test',
+        component: EmailTestComponent
       }
     ]),
     BrowserAnimationsModule,

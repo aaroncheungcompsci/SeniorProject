@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "(cd mail_server && npm run start)",
+    "dev": "ng serve",
     "build": "ng build",
     "lint": "ng lint",
     "e2e": "ng e2e",

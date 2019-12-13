@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormControl, Validators } from "@angular/forms";
+import { FormControl, Validators, CheckboxRequiredValidator } from "@angular/forms";
 import { HttpService } from "../Shared/http.service";
 import { User } from '../models/user.model';
 import { Observable, of as observableOf, merge } from 'rxjs';
@@ -12,32 +12,38 @@ import { findSafariExecutable } from 'selenium-webdriver/safari';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
-  //declare arrays for Different applications
+  length: any;
   users: User[];
-  // approved: User[];
-  // rejected: User[];
-  // pending: User[];
+  approved: number = 40;
+  pending: number= 15;
+  rejected: number = 25;
+  total: number = 100;
 
-  //Initializing the string types
-  statusA = "Accepted";
-  statusR = "Rejected";
-  statusP = "Pending";
+  statusA="Approved";
+  statusP="Pending";
+  statusR="Rejected";
 
-  //created the User enum
+  loading = false;
+  buttionText = "Submit";
+
   usertoAdd: User =
   {
-    _id: '', name: '', category: '', created_at:'',email:'',phone:'',car:'',venmo:'', approved: '',
+    _id: '', name: '', category: '', created_at:'',email:'',phone:'',car:'',venmo:'', approved: ''
   };
 
   constructor(private userService: UserService,public http: HttpService) {}
 
   ngOnInit() {
-    console.log(this.http.test);
     this.userService.getUser()
   .subscribe(data =>this.users = data);
-  }
 
-  // constructor(){}
-  // ngOnInit(){}
+  //multiply by 100 then divide by total applications to get percentage value
+  this.approved = this.approved*100/this.total;
+  this.pending = this.pending*100/this.total;
+  this.rejected = this.rejected*100/this.total;
+
+  // this.approved=50;
+  // this.pending=40;
+  // this.rejected=10;
+  }
 }
