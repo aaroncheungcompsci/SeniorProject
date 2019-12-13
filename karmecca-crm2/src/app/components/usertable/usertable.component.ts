@@ -30,7 +30,10 @@ export class UsertableComponent implements OnInit {
   {
     _id: '', name: '', category: '', created_at:'',email:'',phone:'',car:'',venmo:'', approved: ''
   };
-
+  usertoModal: User =
+  {
+    _id: '', name: '', category: '', created_at:'',email:'',phone:'',car:'',venmo:'', approved: ''
+  };
 
   private ELEMENT_DATA;
   public dataSource;
@@ -110,13 +113,32 @@ ngOnInit() {
   }
 
  openDialog(id2:string): void {
+  this.usertoModal._id = this.returnRow(id2)._id;
+  this.usertoModal.name = this.returnRow(id2).name;
+  this.usertoModal.category = this.returnRow(id2).category;
+  this.usertoModal.created_at = this.returnRow(id2).created_at;
+  this.usertoModal.email = this.returnRow(id2).email;
+  this.usertoModal.car = this.returnRow(id2).car;
+  this.usertoModal.venmo = this.returnRow(id2).venmo;
+  this.usertoModal.phone = this.returnRow(id2).phone;
+  this.usertoModal.approved = this.returnRow(id2).approved;
+
+  console.log(this.usertoModal);
   const dialogRef = this.dialog.open(ModalComponent, {
     width: '500px',
-    data: {_id:this.returnRow(id2)._id, name: this.returnRow(id2).name, category: this.returnRow(id2).category,
-      created_at: this.returnRow(id2).created_at, email:this.returnRow(id2).email, car:this.returnRow(id2).car,
-      venmo: this.returnRow(id2).venmo, phone: this.returnRow(id2).phone, approved: this.returnRow(id2).approved  }
-    });
+    data: {user: this.usertoModal}
+  });
+
+    dialogRef.afterClosed().subscribe(result =>
+      {
+        console.log(result.user);
+        console.log(this.usertoModal);
+        this.usertoModal = result.user;
+        this.editUser(this.usertoModal);
+  
+      })
   }
+
   openForm(): void {
     const dialogRef = this.dialog.open(AddFormComponent, {
       width: '1000px',
@@ -147,7 +169,11 @@ ngOnInit() {
     console.log("button pressed");
     new AngularCsv(this.users, "KarmeccaApplicantList", this.csvOptions);
   }
-
+  editUser(userToEdit : User)
+  {
+    this.userService.editUser(this.usertoModal)
+    .subscribe((data: User[]) => this.users = data);
+  }
   /*ngAfterInit(): void {
     this.dataSource.sort = this.sort;
   }*/

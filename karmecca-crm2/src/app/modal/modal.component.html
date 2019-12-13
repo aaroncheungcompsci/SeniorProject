@@ -1,20 +1,23 @@
-<h1 mat-dialog-title>Account Information</h1>
+<h1 mat-dialog-title *ngIf="!show">Account Information</h1>
+<h1 mat-dialog-title *ngIf="show">Edit User</h1>
+
 <p >
-  <strong>ID:</strong> <td>{{data._id}}</td><br/>
-  <strong>Name:</strong> <td>{{data.name}}</td><br/>
-  <strong>Category:</strong> <td>{{data.category}}</td><br/>
-  <strong>Date Created:</strong> <td>{{data.created_at}}</td><br/>
-  <strong>Email:</strong> <td>{{data.email}}</td><br/>
-  <strong>Car:</strong> <td>{{data.car}}</td><br/>
-  <strong>Venmo:</strong> <td>{{data.venmo}}</td><br/>
-  <strong>Phone:</strong> <td>{{data.phone}}</td><br/>
-  <strong>Status:</strong> <td>{{data.approved}}</td><br/>
+  <strong>ID:</strong> <td *ngIf="!show">{{data.user._id}}</td> <td *ngIf="show"><input matInput [(ngModel)]="data.user._id"></td><br/>
+  <strong>Name:</strong> <td *ngIf="!show">{{data.user.name}}</td> <td *ngIf="show"><mat-form-field><input matInput [(ngModel)]="data.user.name"></mat-form-field></td> <br/>
+  <strong>Category:</strong> <td *ngIf="!show">{{data.user.category}}</td> <td *ngIf="show"><mat-form-field><input matInput [(ngModel)]="data.user.category"></mat-form-field></td> <br/>
+  <strong *ngIf="!show">Date Created:</strong> <td *ngIf="!show">{{data.user.created_at}}</td><br/>
+  <strong>Email:</strong> <td *ngIf="!show">{{data.user.email}}</td> <td *ngIf="show"><mat-form-field><input matInput [(ngModel)]="data.user.email"></mat-form-field></td> <br/>
+  <strong>Car:</strong> <td *ngIf="!show">{{data.user.car}}</td> <td *ngIf="show"><mat-form-field><input matInput [(ngModel)]="data.user.car"></mat-form-field></td><br/>
+  <strong>Venmo:</strong> <td *ngIf="!show">{{data.user.venmo}}</td><td *ngIf="show"><mat-form-field><input matInput [(ngModel)]="data.user.venmo"></mat-form-field></td><br/>
+  <strong>Phone:</strong> <td *ngIf="!show">{{data.user.phone}}</td> <td *ngIf="show"><mat-form-field><input matInput [(ngModel)]="data.user.phone"></mat-form-field></td><br/>
+  <strong *ngIf="!show">Status:</strong> <td *ngIf="!show">{{data.user.approved}}</td><br/>
 </p>
 
 <div mat-dialog-actions>
-  <button mat-button (click)="onApprove()">Accept</button>
-  <button mat-button (click)="onNoClick()">Reject</button>
-  <button mat-button><mat-icon>edit</mat-icon></button>
+  <button mat-button *ngIf="!show" (click)="onApprove()">Accept</button>
+  <button mat-button *ngIf="!show" (click)="onNoClick()">Reject</button>
+  <button mat-button *ngIf= "show" [mat-dialog-close]="data" cdkFocusInitial>Confirm</button>
+  <button mat-button (click)="onEdit()"><mat-icon>edit</mat-icon></button>
 </div>
 
 

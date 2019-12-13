@@ -14,18 +14,26 @@ import { UserService } from '../services/user.service';
 })
 export class ModalComponent implements OnInit {
 
+  private show = false;
+
   constructor(
     public dialogRef: MatDialogRef<ModalComponent>,
     private userService: UserService,
     @Inject(MAT_DIALOG_DATA) public data: User) {}
 
   onApprove(): void {
-    this.userService.approveUser(this.data).subscribe(data => {console.log("PUT Request is successful ", data);});
+    //console.log(this.data._id);
+    //console.log(this.data.user._id);
+    
+    this.userService.approveUser(this.data.user).subscribe(data => {console.log("PUT Request is successful ", data);});
     this.dialogRef.close();
   }
   onNoClick(): void {
-    this.userService.rejectUser(this.data).subscribe(data => {console.log("PUT Request is successful ", data);});
+    this.userService.rejectUser(this.data.user).subscribe(data => {console.log("PUT Request is successful ", data);});
     this.dialogRef.close();
+  }
+  onEdit() {
+    this.show = !this.show;
   }
   ngOnInit() {
     
