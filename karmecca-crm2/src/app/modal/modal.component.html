@@ -2,15 +2,15 @@
 <h1 mat-dialog-title *ngIf="show">Edit User</h1>
 
 <p >
-  <strong>ID:</strong> <td *ngIf="!show">{{data.user._id}}</td> <td *ngIf="show"><input matInput [(ngModel)]="data.user._id"></td><br/>
-  <strong>Name:</strong> <td *ngIf="!show">{{data.user.name}}</td> <td *ngIf="show"><mat-form-field><input matInput [(ngModel)]="data.user.name"></mat-form-field></td> <br/>
-  <strong>Category:</strong> <td *ngIf="!show">{{data.user.category}}</td> <td *ngIf="show"><mat-form-field><input matInput [(ngModel)]="data.user.category"></mat-form-field></td> <br/>
-  <strong *ngIf="!show">Date Created:</strong> <td *ngIf="!show">{{data.user.created_at}}</td><br/>
-  <strong>Email:</strong> <td *ngIf="!show">{{data.user.email}}</td> <td *ngIf="show"><mat-form-field><input matInput [(ngModel)]="data.user.email"></mat-form-field></td> <br/>
-  <strong>Car:</strong> <td *ngIf="!show">{{data.user.car}}</td> <td *ngIf="show"><mat-form-field><input matInput [(ngModel)]="data.user.car"></mat-form-field></td><br/>
-  <strong>Venmo:</strong> <td *ngIf="!show">{{data.user.venmo}}</td><td *ngIf="show"><mat-form-field><input matInput [(ngModel)]="data.user.venmo"></mat-form-field></td><br/>
-  <strong>Phone:</strong> <td *ngIf="!show">{{data.user.phone}}</td> <td *ngIf="show"><mat-form-field><input matInput [(ngModel)]="data.user.phone"></mat-form-field></td><br/>
-  <strong *ngIf="!show">Status:</strong> <td *ngIf="!show">{{data.user.approved}}</td><br/>
+  <strong>ID:</strong> <td *ngIf="!show">{{data._id}}</td> <td *ngIf="show"><input matInput [(ngModel)]="data._id"></td><br/>
+  <strong>Name:</strong> <td *ngIf="!show">{{data.name}}</td> <td *ngIf="show"><mat-form-field><input matInput [(ngModel)]="data.name"></mat-form-field></td> <br/>
+  <strong>Category:</strong> <td *ngIf="!show">{{data.category}}</td> <td *ngIf="show"><mat-form-field><input matInput [(ngModel)]="data.category"></mat-form-field></td> <br/>
+  <strong *ngIf="!show">Date Created:</strong> <td *ngIf="!show">{{data.created_at}}</td><br/>
+  <strong>Email:</strong> <td *ngIf="!show">{{data.email}}</td> <td *ngIf="show"><mat-form-field><input matInput [(ngModel)]="data.email"></mat-form-field></td> <br/>
+  <strong>Car:</strong> <td *ngIf="!show">{{data.car}}</td> <td *ngIf="show"><mat-form-field><input matInput [(ngModel)]="data.car"></mat-form-field></td><br/>
+  <strong>Venmo:</strong> <td *ngIf="!show">{{data.venmo}}</td><td *ngIf="show"><mat-form-field><input matInput [(ngModel)]="data.venmo"></mat-form-field></td><br/>
+  <strong>Phone:</strong> <td *ngIf="!show">{{data.phone}}</td> <td *ngIf="show"><mat-form-field><input matInput [(ngModel)]="data.phone"></mat-form-field></td><br/>
+  <strong *ngIf="!show">Status:</strong> <td *ngIf="!show">{{data.approved}}</td><br/>
 </p>
 
 <div mat-dialog-actions>

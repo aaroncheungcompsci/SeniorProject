@@ -5,6 +5,11 @@ import { User } from '../models/user.model';
 import { Observable, of as observableOf, merge } from 'rxjs';
 import { UserService } from '../services/user.service';
 import { findSafariExecutable } from 'selenium-webdriver/safari';
+import {DataSource} from '@angular/cdk/collections';
+import {MatSort, MatPaginator} from '@angular/material';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { MatTableDataSource } from '@angular/material/table';
+
 
 @Component({
   selector: 'app-home',
@@ -18,6 +23,8 @@ export class HomeComponent implements OnInit {
   pending: number= 15;
   rejected: number = 25;
   total: number = 100;
+  private ELEMENT_DATA;
+  public dataSource;
 
   statusA="Approved";
   statusP="Pending";
@@ -33,9 +40,21 @@ export class HomeComponent implements OnInit {
 
   constructor(private userService: UserService,public http: HttpService) {}
 
+  
+  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
+  @ViewChild(MatSort, {static: true}) sort: MatSort;
+
   ngOnInit() {
     this.userService.getUser()
   .subscribe(data =>this.users = data);
+
+  this.userService.getUser().subscribe(results => {
+    if(!results) return;
+    this.ELEMENT_DATA = results;
+    this.dataSource = new MatTableDataSource(this.ELEMENT_DATA);
+    this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
+  })
 
   //multiply by 100 then divide by total applications to get percentage value
   this.approved = this.approved*100/this.total;
@@ -45,5 +64,9 @@ export class HomeComponent implements OnInit {
   // this.approved=50;
   // this.pending=40;
   // this.rejected=10;
+    console.log(this.users);
+  
   }
+
 }
+
