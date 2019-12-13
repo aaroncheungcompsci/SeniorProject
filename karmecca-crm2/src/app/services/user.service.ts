@@ -40,6 +40,11 @@ export class UserService {
     const url = `${this.serviceUrl}/${user._id}`;
     return this.http.put(url, user) 
   }
+  editUser(user: User)
+  {
+    const url = `${this.serviceUrl}/${user._id}`;
+    return this.http.put(url, user) 
+  }
   
 }
 
