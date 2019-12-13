@@ -37,6 +37,7 @@ export class UserService {
   approveUser(user: User) 
   {
     user.approved = "Approved";
+    console.log(user);
     const url = `${this.serviceUrl}/${user._id}`;
     return this.http.put(url, user) 
   }

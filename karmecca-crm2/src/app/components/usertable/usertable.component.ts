@@ -66,8 +66,6 @@ ngOnInit() {
   this.userService.getUser()
   .subscribe(data =>this.users = data);
 
-  // console.log(this.users.length);
-
 
   this.userService.getUser().subscribe(results => {
     if(!results) return;
@@ -76,6 +74,7 @@ ngOnInit() {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
   });
+  
 
 
  }
@@ -127,14 +126,12 @@ ngOnInit() {
   console.log(this.usertoModal);
   const dialogRef = this.dialog.open(ModalComponent, {
     width: '500px',
-    data: {user: this.usertoModal}
+    data: this.usertoModal
   });
 
     dialogRef.afterClosed().subscribe(result =>
       {
-        console.log(result.user);
-        console.log(this.usertoModal);
-        this.usertoModal = result.user;
+        this.usertoModal = result;
         this.editUser(this.usertoModal);
   
       })
