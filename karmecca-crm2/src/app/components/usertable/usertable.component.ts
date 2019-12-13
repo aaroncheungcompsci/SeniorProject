@@ -9,7 +9,7 @@ import { Observable, of as observableOf, merge } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { ModalComponent } from '../../modal/modal.component';
-
+import { AngularCsv } from 'angular7-csv/dist/Angular-csv';
 import { AddFormComponent } from '../../add-form/add-form.component';
 import { MatTableDataSource } from '@angular/material/table';
 import { HttpService } from "../../Shared/http.service";
@@ -41,6 +41,18 @@ export class UsertableComponent implements OnInit {
 
   displayedColumns = ['name', 'email', 'category', 'phone', 'venmo', 'car', 'action'];
   constructor(public dialog: MatDialog, private userService: UserService, public http: HttpService) { }
+
+  csvOptions = {
+    fieldSeparator: ',',
+    quoteStrings: '"',
+    decimalseparator: '.',
+    showLabels: true,
+    showTitle: true,
+    title: 'Karmecca Applicant List',
+    useBom: true,
+    noDownload: false,
+    headers: ["Car", "ID", "Created At", "Name", "Email", "Category", "Phone", "Venmo", "Status"]
+  };
 
 
   applyFilter(filterValue: string) {
