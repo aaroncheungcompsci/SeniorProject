@@ -121,7 +121,7 @@ span.psw {
       </mat-form-field>
 
       <button
-      routerLink="/home"
+      (click)="login()"
       mat-raised-button type="submit"
       [disabled] = "pwFormControl.invalid || unameFormControl.invalid"
       >Login</button>

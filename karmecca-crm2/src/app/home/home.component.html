@@ -34,27 +34,36 @@ div {
     <!-- <img src="/assets/DSC02310.jpg" alt="Flowers in Chania" style="width:1400px;height:900px;"> -->
     <br>
     <br>
+    <form style ="width:50%; margin: auto">
+      <mat-card>
+        <div class = "container">
+          <h1><strong>Welcome!</strong></h1>
+          <h4><strong>You are on the Karmecca Backend Beta website!</strong></h4>
+        </div>
+      </mat-card>
+    </form>
+    <br>
     <form style="width: 50%; margin: auto">
       <mat-card>
         <div class="container">
           <h2><strong>Current Application Status</strong></h2>
           <h6><strong>Applications Approved:</strong></h6>
           <div class="light-grey round-xlarge">
-            <div class="container green round-xlarge" [ngStyle]="{'width.%':approved}"><strong>{{approved}}</strong></div>
+            <div class="container green round-xlarge" [ngStyle]="{'width.%':approved}"><strong>{{approved}}%</strong></div>
           </div>
           <br>
           <br>
           <br>
           <h6><strong>Applications Pending:</strong></h6>
           <div class="light-grey round-xlarge">
-            <div class="container orange round-xlarge" [ngStyle]="{'width.%':pending}"><strong>{{pending}}</strong></div>
+            <div class="container orange round-xlarge" [ngStyle]="{'width.%':pending}"><strong>{{pending}}%</strong></div>
           </div>
           <br>
           <br>
           <br>
           <h6><strong>Applications Rejected:</strong></h6>
           <div class="light-grey round-xlarge">
-            <div class="container red round-xlarge" [ngStyle]="{'width.%':rejected}"><strong>{{rejected}}</strong></div>
+            <div class="container red round-xlarge" [ngStyle]="{'width.%':rejected}"><strong>{{rejected}}%</strong></div>
           </div>
         </div>
       </mat-card>

@@ -14,9 +14,9 @@ import { findSafariExecutable } from 'selenium-webdriver/safari';
 export class HomeComponent implements OnInit {
   length: any;
   users: User[];
-  approved: number = 40;
-  pending: number= 15;
-  rejected: number = 25;
+  approved: number = 60;
+  pending: number= 30;
+  rejected: number = 10;
   total: number = 100;
 
   statusA="Approved";
