@@ -22,3 +22,9 @@ A general tl;dr list of what we have learned is as follows (in no particular ord
 - Learning different Git commands
 - Resolving Merge Conflicts
 - Learning what MEAN stack development means, as well as getting our feet wet with the languages involved in the MEAN stack
+
+## Conclusion
+
+Much of this project was a huge learning experience for us. We hope that this project demonstrates the experience and hardships that we had to endure in the making of this CRM.
+
+Team U-Can
