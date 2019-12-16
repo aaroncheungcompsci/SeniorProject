@@ -22,9 +22,7 @@ export class ModalComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: User) {}
 
   onApprove(): void {
-    //console.log(this.data._id);
-    //console.log(this.data.user._id);
-    
+
     this.userService.approveUser(this.data).subscribe(data => {console.log("PUT Request is successful ", data);});
     this.dialogRef.close();
   }
