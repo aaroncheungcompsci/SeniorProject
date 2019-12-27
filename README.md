@@ -37,5 +37,5 @@ A general tl;dr list of what we have learned is as follows (in no particular ord
 
 Much of this project was a huge learning experience for us. We hope that this project demonstrates the experience and hardships that we had to endure in the making of this CRM.
 
-On behalf of Team U-Can,
+On behalf of Team U-Can, <br>
 Aaron Cheung
