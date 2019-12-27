@@ -19,7 +19,7 @@ There are several components that go into the making of our CRM, although every 
 - About us page
 - Applications page
 
-Much of the documentation regarding our application can be found in the pdf files within this directory of the repository.
+Much of the documentation regarding our application can be found in the pdf files within the documentation directory of the  repository.
 
 ## Lessons Learned as a Team
 
