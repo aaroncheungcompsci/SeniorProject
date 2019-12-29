@@ -10,8 +10,11 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  realUsername= "officialpurevip@gmail.com";
-  realPassword = "CarShow2020!";
+  //Original Credentials:
+  //realUsername= "officialpurevip@gmail.com";
+  //realPassword = "CarShow2020!";
+  realUsername = "test";
+  realPassword = "test";
 
   //pw variable
   pwFormControl = new FormControl("", [
