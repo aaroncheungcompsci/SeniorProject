@@ -18,8 +18,11 @@ There are several components that go into the making of our CRM, although every 
 - Graph showing current applications approved, denied, or in progress
 - About us page
 - Applications page
+- Mail Server for verifying applications
 
 Much of the documentation regarding our application can be found in the pdf files within the documentation directory of the  repository.
+
+### Important: If you'd like to play around with the application, note that the username and password are both "test". 
 
 ## Lessons Learned as a Team
 
